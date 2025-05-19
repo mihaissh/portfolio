@@ -19,9 +19,7 @@ export const TechStacks = () => {
         <h4 className="font-bold mb-6">Back-End Stacks</h4>
         <aside className="flex flex-wrap gap-2 mb-8">
           <TechBadge>NodeJS</TechBadge>
-          <TechBadge>Express</TechBadge>
           <TechBadge>MySQL</TechBadge>
-          <TechBadge>MongoDB</TechBadge>
           <TechBadge>Firebase</TechBadge>
           <TechBadge>REST API</TechBadge>
         </aside>
