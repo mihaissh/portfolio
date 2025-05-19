@@ -202,55 +202,55 @@ export const projects = [
       },
     ],
   },
-  {
-    id: 5,
-    project: "Library Management System",
-    date: "2025",
-    videoUrl: "/",
-    websiteUrl: "/",
-    githubUrl: "/",
-    shortDescription:
-      "Java backend for managing library inventory with Spring Boot.",
-    longDescription:
-      "Developed a Library Management System backend as an exam project for the Java Programming Course at IT School Romania. Implemented inventory management and database operations using PostgreSQL for data storage. Created RESTful APIs following MVC architecture and tested using Postman for API validation.",
-    features: [
-      "RESTful API design following MVC architecture",
-      "PostgreSQL database integration with Hibernate ORM",
-      "Library inventory management functionality",
-      "API testing and validation with Postman",
-    ],
-    frontendStacks: [],
-    backendStacks: [
-      {
-        name: "Java Logo",
-        path: "/tech/java.svg",
-      },
-      {
-        name: "Spring Boot Logo",
-        path: "/tech/spring.svg",
-      },
-      {
-        name: "Hibernate Logo",
-        path: "/tech/hibernate.svg",
-      },
-      {
-        name: "PostgreSQL Logo",
-        path: "/tech/postgresql.svg",
-      },
-    ],
-    clientLibraries: [
-      {
-        name: "Maven Logo",
-        path: "/tech/maven.svg",
-      },
-      {
-        name: "Postman Logo",
-        path: "/tech/postman.svg",
-      },
-      {
-        name: "Git Logo",
-        path: "/tech/git.svg",
-      },
-    ],
-  },
+  // {
+  //   id: 5,
+  //   project: "Library Management System",
+  //   date: "2025",
+  //   videoUrl: "/",
+  //   websiteUrl: "/",
+  //   githubUrl: "/",
+  //   shortDescription:
+  //     "Java backend for managing library inventory with Spring Boot.",
+  //   longDescription:
+  //     "Developed a Library Management System backend as an exam project for the Java Programming Course at IT School Romania. Implemented inventory management and database operations using PostgreSQL for data storage. Created RESTful APIs following MVC architecture and tested using Postman for API validation.",
+  //   features: [
+  //     "RESTful API design following MVC architecture",
+  //     "PostgreSQL database integration with Hibernate ORM",
+  //     "Library inventory management functionality",
+  //     "API testing and validation with Postman",
+  //   ],
+  //   frontendStacks: [],
+  //   backendStacks: [
+  //     {
+  //       name: "Java Logo",
+  //       path: "/tech/java.svg",
+  //     },
+  //     {
+  //       name: "Spring Boot Logo",
+  //       path: "/tech/spring.svg",
+  //     },
+  //     {
+  //       name: "Hibernate Logo",
+  //       path: "/tech/hibernate.svg",
+  //     },
+  //     {
+  //       name: "PostgreSQL Logo",
+  //       path: "/tech/postgresql.svg",
+  //     },
+  //   ],
+  //   clientLibraries: [
+  //     {
+  //       name: "Maven Logo",
+  //       path: "/tech/maven.svg",
+  //     },
+  //     {
+  //       name: "Postman Logo",
+  //       path: "/tech/postman.svg",
+  //     },
+  //     {
+  //       name: "Git Logo",
+  //       path: "/tech/git.svg",
+  //     },
+  //   ],
+  // },
 ];
