@@ -37,11 +37,9 @@ export const AboutMe = () => {
 
             <Reveal>
               <p className="leading-relaxed text-zinc-300">
-                I&apos;m actively looking to be part of a dynamic team where I
-                can contribute to the success of the company. If you are
-                interested in my skills, please feel free to reach out to me.
-                I&apos;m always open to new and exciting projects.{" "}
-                <span className="font-bold">Let&apos;s connect!</span>
+                I currently work as a Connectivity Engineer at Marsh McLennan,
+                based in Cluj-Napoca, where I focus on the Darwin connectivity
+                platform <span className="font-bold">Let&apos;s connect!</span>
               </p>
             </Reveal>
 

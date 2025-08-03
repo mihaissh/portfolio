@@ -10,7 +10,7 @@ export const HeaderBlock = () => {
         className="mb-4 size-14 rounded-full"
       />
       <h1 className="mb-12 text-4xl font-medium leading-tight">
-        Hi, I'm Mihai Straculencu.{" "}
+        Hi, I'm Mihai.{" "}
         <span className="text-zinc-400">
           Creating cool and functional user interfaces.
         </span>
