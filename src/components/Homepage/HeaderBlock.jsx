@@ -5,9 +5,9 @@ export const HeaderBlock = () => {
   return (
     <Block className="col-span-12 row-span-2 md:col-span-6">
       <img
-        src="/headshot.jpg"
-        alt="Straculencu Mihai Profile Picture"
-        className="mb-4 size-14 rounded-full"
+        src="/profile.jpg"
+        alt="Profile Picture"
+        className="mb-4 size-16 rounded-full object-cover"
       />
       <h1 className="mb-12 text-4xl font-medium leading-tight">
         Hi, I'm Mihai.{" "}
