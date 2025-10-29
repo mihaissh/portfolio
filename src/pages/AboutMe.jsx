@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { FiGithub, FiLinkedin, FiArrowRight, FiCode, FiHeart, FiCoffee } from "react-icons/fi";
 import { SiDiscord } from "react-icons/si";
 import { SectionHeader } from "../components/About/SectionHeader";
@@ -93,30 +92,30 @@ export const AboutMe = () => {
                 <FiArrowRight className="group-hover:translate-x-2 transition-all duration-300" />
               </div>
               <div className="flex items-center text-lg gap-4">
-                <Link
+                <a
                   target="_blank"
                   rel="noreferrer nofollow"
-                  to="https://www.linkedin.com/in/straculencu-mihai/"
+                  href="https://www.linkedin.com/in/straculencu-mihai/"
                   className="text-zinc-300 hover:text-emerald-300 transition-colors"
                 >
                   <FiLinkedin />
-                </Link>
-                <Link
+                </a>
+                <a
                   target="_blank"
                   rel="noreferrer nofollow"
-                  to="https://github.com/mihaissh"
+                  href="https://github.com/mihaissh"
                   className="text-zinc-300 hover:text-emerald-300 transition-colors"
                 >
                   <FiGithub />
-                </Link>
-                <Link
+                </a>
+                <a
                   target="_blank"
                   rel="noreferrer nofollow"
-                  to="https://discord.com/users/s_mihai"
+                  href="https://discord.com/users/s_mihai"
                   className="text-zinc-300 hover:text-emerald-300 transition-colors"
                 >
                   <SiDiscord />
-                </Link>
+                </a>
               </div>
             </div>
           </Reveal>

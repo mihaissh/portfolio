@@ -85,7 +85,10 @@ export const EmailListBlock = () => {
         setSubmitStatus(null);
       }, 2000);
     } catch (error) {
-      console.error("Failed to send email:", error);
+      // Only log errors in development
+      if (import.meta.env.DEV) {
+        console.error("Failed to send email:", error);
+      }
       setSubmitStatus("error");
     } finally {
       setIsSubmitting(false);
@@ -211,7 +214,7 @@ export const EmailListBlock = () => {
                     value={formData.fullName}
                     onChange={handleInputChange}
                     required
-                    className="w-full rounded border border-zinc-700 bg-zinc-800 px-3 py-2 text-zinc-100 transition-colors focus:border-red-300 focus:outline-0"
+                    className="w-full rounded border border-zinc-700 bg-zinc-800 px-3 py-2 text-zinc-100 transition-colors focus:border-emerald-400 focus:outline-none focus:ring-0"
                     placeholder="John Doe"
                   />
                 </div>
@@ -233,8 +236,8 @@ export const EmailListBlock = () => {
                     className={`w-full rounded border ${
                       errors.email
                         ? "border-red-500 focus:border-red-500"
-                        : "border-zinc-700 focus:border-red-300"
-                    } bg-zinc-800 px-3 py-2 text-zinc-100 transition-colors focus:outline-0`}
+                        : "border-zinc-700 focus:border-emerald-400"
+                    } bg-zinc-800 px-3 py-2 text-zinc-100 transition-colors focus:outline-none focus:ring-0`}
                     placeholder="your.email@example.com"
                   />
                   {errors.email && (
@@ -262,8 +265,8 @@ export const EmailListBlock = () => {
                     className={`w-full rounded border ${
                       errors.phone
                         ? "border-red-500 focus:border-red-500"
-                        : "border-zinc-700 focus:border-red-300"
-                    } bg-zinc-800 px-3 py-2 text-zinc-100 transition-colors focus:outline-0`}
+                        : "border-zinc-700 focus:border-emerald-400"
+                    } bg-zinc-800 px-3 py-2 text-zinc-100 transition-colors focus:outline-none focus:ring-0`}
                     placeholder="+1 (555) 000-0000"
                   />
                   {errors.phone ? (
@@ -292,7 +295,7 @@ export const EmailListBlock = () => {
                     onChange={handleInputChange}
                     required
                     rows={5}
-                    className="w-full rounded border border-zinc-700 bg-zinc-800 px-3 py-2 text-zinc-100 transition-colors focus:border-red-300 focus:outline-0 resize-none"
+                    className="w-full rounded border border-zinc-700 bg-zinc-800 px-3 py-2 text-zinc-100 transition-colors focus:border-emerald-400 focus:outline-none focus:ring-0 resize-none"
                     placeholder="Your message here..."
                   />
                 </div>

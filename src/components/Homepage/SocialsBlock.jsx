@@ -1,7 +1,8 @@
 import { Block } from "./Block";
-import { SiGithub, SiLinkedin } from "react-icons/si";
+import { SiLinkedin, SiGithub } from "react-icons/si";
 import { FiGrid } from "react-icons/fi";
 import { GoProjectRoadmap } from "react-icons/go";
+import { Link } from "react-router-dom";
 
 export const SocialsBlock = () => {
   return (
@@ -35,10 +36,7 @@ export const SocialsBlock = () => {
           target="_blank"
           className="grid h-full place-content-center text-3xl text-white"
         >
-          <img
-            src="https://api.iconify.design/line-md:github-loop.svg?color=%23f0f0f0"
-            className="w-10 h-10"
-          ></img>
+          <SiGithub />
         </a>
       </Block>
       <Block
@@ -48,12 +46,12 @@ export const SocialsBlock = () => {
         }}
         className="col-span-6 bg-green-600 md:col-span-3"
       >
-        <a
-          href="/projects"
+        <Link
+          to="/projects"
           className="grid h-full place-content-center text-3xl text-white"
         >
           <FiGrid />
-        </a>
+        </Link>
       </Block>
       <Block
         whileHover={{
@@ -62,12 +60,12 @@ export const SocialsBlock = () => {
         }}
         className="col-span-6 bg-rose-500 md:col-span-3"
       >
-        <a
-          href="/error"
+        <Link
+          to="*"
           className="grid h-full place-content-center text-3xl text-white"
         >
           <GoProjectRoadmap />
-        </a>
+        </Link>
       </Block>
     </>
   );

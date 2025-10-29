@@ -202,10 +202,9 @@ export const Resume = () => {
             <a
               href="/resume/Straculencu Mihai CV.pdf"
               download
-              className="relative group px-6 py-3 bg-zinc-800 rounded-lg leading-none flex items-center gap-3 hover:bg-zinc-700 transition-colors"
+              className="px-6 py-3 bg-zinc-800 rounded-lg flex items-center gap-3 hover:bg-zinc-700 transition-colors border border-zinc-700 hover:border-emerald-500"
             >
-              <div className="absolute -inset-1 bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-lg blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200 -z-10"></div>
-              <FiDownload className="text-emerald-400 text-xl group-hover:animate-bounce transition-transform" />
+              <FiDownload className="text-emerald-400 text-xl" />
               <span className="text-zinc-300 font-medium">Download Resume as PDF</span>
             </a>
           </div>

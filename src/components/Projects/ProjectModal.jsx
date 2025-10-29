@@ -1,6 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { FiX, FiGithub, FiGlobe } from "react-icons/fi";
-import { Link } from "react-router-dom";
 import { useEffect } from "react";
 
 export const ProjectModal = ({
@@ -62,22 +61,28 @@ export const ProjectModal = ({
                   {project}
                 </h2>
                 <div className="flex items-center gap-3 ml-auto">
-                  <Link 
-                    to={githubUrl} 
-                    target="_blank"
-                    className="text-zinc-400 hover:text-emerald-300 transition-colors"
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    <FiGithub size={20} />
-                  </Link>
-                  <Link 
-                    to={websiteUrl} 
-                    target="_blank"
-                    className="text-zinc-400 hover:text-emerald-300 transition-colors"
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    <FiGlobe size={20} />
-                  </Link>
+                  {githubUrl && githubUrl !== "/" && (
+                    <a 
+                      href={githubUrl} 
+                      target="_blank"
+                      rel="noreferrer nofollow"
+                      className="text-zinc-400 hover:text-emerald-300 transition-colors"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <FiGithub size={20} />
+                    </a>
+                  )}
+                  {websiteUrl && websiteUrl !== "/" && (
+                    <a 
+                      href={websiteUrl} 
+                      target="_blank"
+                      rel="noreferrer nofollow"
+                      className="text-zinc-400 hover:text-emerald-300 transition-colors"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <FiGlobe size={20} />
+                    </a>
+                  )}
                 </div>
               </div>
               <p className="text-sm text-zinc-500">{date}</p>
@@ -207,24 +212,26 @@ export const ProjectModal = ({
             {/* Modal Footer - Action Buttons */}
             <div className="flex gap-3 pt-6 mt-6 border-t border-zinc-800">
               {githubUrl && githubUrl !== "/" && (
-                <Link
-                  to={githubUrl}
+                <a
+                  href={githubUrl}
                   target="_blank"
+                  rel="noreferrer nofollow"
                   className="flex-1 flex items-center justify-center gap-2 rounded border border-zinc-700 px-4 py-2.5 text-sm font-medium text-zinc-300 transition-colors hover:bg-zinc-800 hover:border-zinc-600"
                   onClick={(e) => e.stopPropagation()}
                 >
                   <FiGithub /> View Code
-                </Link>
+                </a>
               )}
               {websiteUrl && websiteUrl !== "/" && (
-                <Link
-                  to={websiteUrl}
+                <a
+                  href={websiteUrl}
                   target="_blank"
+                  rel="noreferrer nofollow"
                   className="flex-1 flex items-center justify-center gap-2 rounded bg-zinc-50 px-4 py-2.5 text-sm font-medium text-zinc-900 transition-colors hover:bg-zinc-300"
                   onClick={(e) => e.stopPropagation()}
                 >
                   <FiGlobe /> Visit Website
-                </Link>
+                </a>
               )}
             </div>
           </motion.div>
