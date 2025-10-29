@@ -22,7 +22,7 @@ export const Resume = () => {
               <div className="space-y-2 mb-6">
                 <div className="flex items-center gap-2 text-zinc-300">
                   <FiMail className="text-emerald-400" />
-                  <span className="text-sm">straculencumihai05@gmail.com</span>
+                  <span className="text-sm">mstraculencu@gmail.com</span>
                 </div>
                 <div className="flex items-center gap-2 text-zinc-300">
                   <FiMapPin className="text-emerald-400" />
