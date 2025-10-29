@@ -25,6 +25,7 @@ export const Card = ({ src, date, path, project, skills }) => {
           className="absolute h-full bg-cover bg-center bottom-0 left-0 right-0 top-0 opacity-0 blur-sm grayscale transition-all group-hover:opacity-10 group-active:scale-105 group-active:opacity-30 group-active:blur-0 group-active:grayscale-0"
           src={src}
           alt="Background Image"
+          loading="lazy"
         />
         <Corners />
       </aside>

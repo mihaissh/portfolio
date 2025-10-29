@@ -30,7 +30,7 @@ export const SocialsBlock = () => {
         className="col-span-6 bg-neutral-800 md:col-span-3"
       >
         <a
-          href="https://github.com/MihaiStraculencu"
+          href="https://github.com/mihaissh"
           rel="noopener noreferrer"
           target="_blank"
           className="grid h-full place-content-center text-3xl text-white"

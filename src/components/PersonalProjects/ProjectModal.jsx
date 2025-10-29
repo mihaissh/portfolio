@@ -1,7 +1,21 @@
 import { motion, AnimatePresence } from "framer-motion";
+import { useEffect } from "react";
 
 export const ProjectModal = ({ path, skills, isOpen, setIsOpen }) => {
   const isPdf = path.includes(".pdf");
+
+  // Prevent background scroll when modal is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isOpen]);
 
   return (
     <AnimatePresence>
