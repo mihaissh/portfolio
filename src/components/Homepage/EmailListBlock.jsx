@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { Block } from "./Block";
 import { FiMail, FiX, FiCheck, FiAlertCircle } from "react-icons/fi";
-import { motion, AnimatePresence } from "framer-motion";
 import emailjs from "@emailjs/browser";
 
 export const EmailListBlock = () => {
@@ -169,22 +168,15 @@ export const EmailListBlock = () => {
       </Block>
 
       {/* Modal */}
-      <AnimatePresence>
-        {isModalOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={() => setIsModalOpen(false)}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4"
+      {isModalOpen && (
+        <div
+          onClick={() => setIsModalOpen(false)}
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4 animate-fade-in"
+        >
+          <div
+            onClick={(e) => e.stopPropagation()}
+            className="relative w-full max-w-lg rounded-lg bg-zinc-900 border border-zinc-700 p-6 shadow-xl animate-scale-in"
           >
-            <motion.div
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
-              onClick={(e) => e.stopPropagation()}
-              className="relative w-full max-w-lg rounded-lg bg-zinc-900 border border-zinc-700 p-6 shadow-xl"
-            >
               {/* Close button */}
               <button
                 onClick={() => setIsModalOpen(false)}
@@ -275,7 +267,7 @@ export const EmailListBlock = () => {
                       {errors.phone}
                     </p>
                   ) : (
-                    <p className="text-xs text-zinc-500 mt-1">
+                    <p className="text-xs text-zinc-400 mt-1">
                       {formData.phone.length}/20 characters
                     </p>
                   )}
@@ -302,26 +294,18 @@ export const EmailListBlock = () => {
 
                 {/* Status Messages */}
                 {submitStatus === "success" && (
-                  <motion.div
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    className="flex items-center gap-2 rounded bg-green-500/10 border border-green-500/20 px-4 py-3 text-green-400"
-                  >
+                  <div className="flex items-center gap-2 rounded bg-green-500/10 border border-green-500/20 px-4 py-3 text-green-400 animate-slide-down">
                     <FiCheck className="text-lg" />
                     <span className="text-sm">Message sent successfully!</span>
-                  </motion.div>
+                  </div>
                 )}
                 {submitStatus === "error" && (
-                  <motion.div
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    className="flex items-center gap-2 rounded bg-red-500/10 border border-red-500/20 px-4 py-3 text-red-400"
-                  >
+                  <div className="flex items-center gap-2 rounded bg-red-500/10 border border-red-500/20 px-4 py-3 text-red-400 animate-slide-down">
                     <FiAlertCircle className="text-lg" />
                     <span className="text-sm">
                       Failed to send message. Please try again.
                     </span>
-                  </motion.div>
+                  </div>
                 )}
 
                 {/* Action Buttons */}
@@ -371,10 +355,9 @@ export const EmailListBlock = () => {
                   </button>
                 </div>
               </form>
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
         )}
-      </AnimatePresence>
     </>
   );
 };
