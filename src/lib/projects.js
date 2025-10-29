@@ -3,7 +3,6 @@ export const projects = [
     id: 1,
     project: "Twitter Clone",
     date: "2022",
-    videoUrl: "/",
     websiteUrl: "https://twitterclone-f0512.web.app/",
     githubUrl: "/",
     shortDescription:
@@ -51,7 +50,6 @@ export const projects = [
     id: 2,
     project: "Calculator Web Application",
     date: "2022",
-    videoUrl: "/",
     websiteUrl: "https://calculator-app-ce141.web.app/",
     githubUrl: "/",
     shortDescription:
@@ -95,7 +93,6 @@ export const projects = [
     id: 3,
     project: "Next.js Client Websites Portfolio",
     date: "2023",
-    videoUrl: "/",
     websiteUrl: "/",
     githubUrl: "/",
     shortDescription:
@@ -142,7 +139,6 @@ export const projects = [
     id: 4,
     project: "Remax.md Real Estate Platform",
     date: "2023-2024",
-    videoUrl: "/",
     websiteUrl: "https://remax.md/",
     githubUrl: "/",
     shortDescription:
@@ -206,7 +202,6 @@ export const projects = [
     id: 5,
     project: "Sunset Theme",
     date: "2025",
-    videoUrl: "/",
     websiteUrl: "/",
     githubUrl: "https://github.com/mihaissh/sunset_theme",
     shortDescription:
@@ -242,7 +237,6 @@ export const projects = [
     id: 6,
     project: "Quin69 VOD Archive",
     date: "2025",
-    videoUrl: "/",
     websiteUrl: "/",
     githubUrl: "https://github.com/mihaissh/quin69VOD",
     shortDescription:

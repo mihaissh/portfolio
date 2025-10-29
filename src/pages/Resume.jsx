@@ -1,16 +1,21 @@
-import { Link } from "react-router-dom";
 import { FiGithub, FiLinkedin, FiArrowRight, FiDownload, FiMail, FiMapPin } from "react-icons/fi";
 import { SiDiscord } from "react-icons/si";
 import { SectionHeader } from "../components/About/SectionHeader";
 import { Reveal } from "../components/About/Reveal";
+
+const SkillBadge = ({ children }) => (
+  <span className="px-3 py-1 bg-zinc-800 text-zinc-300 rounded-md text-xs border border-zinc-700">
+    {children}
+  </span>
+);
 
 export const Resume = () => {
   return (
     <main className="mx-auto max-w-5xl px-4 md:px-8 space-y-32 pb-24 relative">
       <section className="section-wrapper mx-auto">
         <SectionHeader title="Resume" dir="l" />
-        <article className="grid grid-cols-1 md:grid-cols-[1fr_300px] gap-8">
-          <aside className="space-y-4">
+        <div className="grid grid-cols-1 md:grid-cols-[1fr_300px] gap-8">
+          <div className="space-y-4">
             <Reveal>
               <h2 className="text-2xl font-bold text-white mb-2">
                 Mihai Straculencu
@@ -20,10 +25,13 @@ export const Resume = () => {
 
             <Reveal>
               <div className="space-y-2 mb-6">
-                <div className="flex items-center gap-2 text-zinc-300">
+                <a 
+                  href="mailto:mstraculencu@gmail.com"
+                  className="flex items-center gap-2 text-zinc-300 hover:text-emerald-300 transition-colors w-fit"
+                >
                   <FiMail className="text-emerald-400" />
-                  <span className="text-sm">straculencumihai05@gmail.com</span>
-                </div>
+                  <span className="text-sm">mstraculencu@gmail.com</span>
+                </a>
                 <div className="flex items-center gap-2 text-zinc-300">
                   <FiMapPin className="text-emerald-400" />
                   <span className="text-sm">Cluj-Napoca, Romania</span>
@@ -50,37 +58,35 @@ export const Resume = () => {
 
             <Reveal>
               <h3 className="text-xl font-bold text-white mt-8 mb-3">Experience</h3>
-              <div className="space-y-4">
-                <div>
-                  <h4 className="font-bold text-emerald-400">Full-Stack Developer</h4>
-                  <p className="text-sm text-zinc-400 mb-2">Freelance & Personal Projects</p>
-                  <ul className="space-y-2 text-zinc-300 text-sm leading-relaxed">
-                    <li className="flex gap-2">
-                      <span className="text-emerald-500 mt-1">•</span>
-                      <span>Developed modern, responsive web applications using React, Next.js, and TypeScript</span>
-                    </li>
-                    <li className="flex gap-2">
-                      <span className="text-emerald-500 mt-1">•</span>
-                      <span>Built RESTful APIs with Node.js, Express, and integrated with PostgreSQL and MongoDB</span>
-                    </li>
-                    <li className="flex gap-2">
-                      <span className="text-emerald-500 mt-1">•</span>
-                      <span>Implemented authentication using Clerk and JWT</span>
-                    </li>
-                    <li className="flex gap-2">
-                      <span className="text-emerald-500 mt-1">•</span>
-                      <span>Utilized Docker for containerization and consistent development environments</span>
-                    </li>
-                    <li className="flex gap-2">
-                      <span className="text-emerald-500 mt-1">•</span>
-                      <span>Applied best practices in code organization and version control with Git</span>
-                    </li>
-                    <li className="flex gap-2">
-                      <span className="text-emerald-500 mt-1">•</span>
-                      <span>Used AI tools (ChatGPT, GitHub Copilot, Cursor) to learn faster, debug efficiently, and boost productivity</span>
-                    </li>
-                  </ul>
-                </div>
+              <div>
+                <h4 className="font-bold text-emerald-400">Full-Stack Developer</h4>
+                <p className="text-sm text-zinc-400 mb-2">Freelance & Personal Projects</p>
+                <ul className="space-y-2 text-zinc-300 text-sm leading-relaxed">
+                  <li className="flex gap-2">
+                    <span className="text-emerald-500 mt-1">•</span>
+                    <span>Developed modern, responsive web applications using React, Next.js, and TypeScript</span>
+                  </li>
+                  <li className="flex gap-2">
+                    <span className="text-emerald-500 mt-1">•</span>
+                    <span>Built RESTful APIs with Node.js, Express, and integrated with PostgreSQL and MongoDB</span>
+                  </li>
+                  <li className="flex gap-2">
+                    <span className="text-emerald-500 mt-1">•</span>
+                    <span>Implemented authentication using Clerk and JWT</span>
+                  </li>
+                  <li className="flex gap-2">
+                    <span className="text-emerald-500 mt-1">•</span>
+                    <span>Utilized Docker for containerization and consistent development environments</span>
+                  </li>
+                  <li className="flex gap-2">
+                    <span className="text-emerald-500 mt-1">•</span>
+                    <span>Applied best practices in code organization and version control with Git</span>
+                  </li>
+                  <li className="flex gap-2">
+                    <span className="text-emerald-500 mt-1">•</span>
+                    <span>Used AI tools (ChatGPT, GitHub Copilot, Cursor) to learn faster, debug efficiently, and boost productivity</span>
+                  </li>
+                </ul>
               </div>
             </Reveal>
 
@@ -103,89 +109,92 @@ export const Resume = () => {
                   <span>Socials</span>
                   <FiArrowRight className="group-hover:translate-x-2 transition-all duration-300" />
                 </div>
-                <div className="flex tiems-center text-lg gap-4">
-                  <Link
+                <div className="flex items-center text-lg gap-4">
+                  <a
+                    href="https://www.linkedin.com/in/straculencu-mihai/"
                     target="_blank"
                     rel="noreferrer nofollow"
-                    to="https://www.linkedin.com/in/straculencu-mihai/"
                     className="text-zinc-300 hover:text-emerald-300 transition-colors"
+                    aria-label="LinkedIn"
                   >
                     <FiLinkedin />
-                  </Link>
-                  <Link
+                  </a>
+                  <a
+                    href="https://github.com/mihaissh"
                     target="_blank"
                     rel="noreferrer nofollow"
-                    to="https://github.com/mihaissh"
                     className="text-zinc-300 hover:text-emerald-300 transition-colors"
+                    aria-label="GitHub"
                   >
                     <FiGithub />
-                  </Link>
-                  <Link
+                  </a>
+                  <a
+                    href="https://discord.com/users/s_mihai"
                     target="_blank"
                     rel="noreferrer nofollow"
-                    to="https://discord.com/users/s_mihai"
                     className="text-zinc-300 hover:text-emerald-300 transition-colors"
+                    aria-label="Discord"
                   >
                     <SiDiscord />
-                  </Link>
+                  </a>
                 </div>
               </div>
             </Reveal>
-          </aside>
+          </div>
 
           {/* Skills Section - Sidebar */}
-          <section className="relative">
-            <article>
+          <aside>
+            <div>
               <h4 className="font-bold mb-6">Front-End</h4>
-              <aside className="flex flex-wrap gap-2 mb-8">
-                <span className="px-3 py-1 bg-zinc-800 text-zinc-300 rounded-md text-xs border border-zinc-700">React</span>
-                <span className="px-3 py-1 bg-zinc-800 text-zinc-300 rounded-md text-xs border border-zinc-700">Next.js</span>
-                <span className="px-3 py-1 bg-zinc-800 text-zinc-300 rounded-md text-xs border border-zinc-700">TypeScript</span>
-                <span className="px-3 py-1 bg-zinc-800 text-zinc-300 rounded-md text-xs border border-zinc-700">JavaScript</span>
-                <span className="px-3 py-1 bg-zinc-800 text-zinc-300 rounded-md text-xs border border-zinc-700">Tailwind CSS</span>
-                <span className="px-3 py-1 bg-zinc-800 text-zinc-300 rounded-md text-xs border border-zinc-700">Framer Motion</span>
-              </aside>
-            </article>
-            <article>
+              <div className="flex flex-wrap gap-2 mb-8">
+                <SkillBadge>React</SkillBadge>
+                <SkillBadge>Next.js</SkillBadge>
+                <SkillBadge>TypeScript</SkillBadge>
+                <SkillBadge>JavaScript</SkillBadge>
+                <SkillBadge>Tailwind CSS</SkillBadge>
+                <SkillBadge>Framer Motion</SkillBadge>
+              </div>
+            </div>
+            <div>
               <h4 className="font-bold mb-6">Back-End</h4>
-              <aside className="flex flex-wrap gap-2 mb-8">
-                <span className="px-3 py-1 bg-zinc-800 text-zinc-300 rounded-md text-xs border border-zinc-700">Node.js</span>
-                <span className="px-3 py-1 bg-zinc-800 text-zinc-300 rounded-md text-xs border border-zinc-700">Express</span>
-                <span className="px-3 py-1 bg-zinc-800 text-zinc-300 rounded-md text-xs border border-zinc-700">PostgreSQL</span>
-                <span className="px-3 py-1 bg-zinc-800 text-zinc-300 rounded-md text-xs border border-zinc-700">MongoDB</span>
-                <span className="px-3 py-1 bg-zinc-800 text-zinc-300 rounded-md text-xs border border-zinc-700">Prisma</span>
-                <span className="px-3 py-1 bg-zinc-800 text-zinc-300 rounded-md text-xs border border-zinc-700">REST API</span>
-              </aside>
-            </article>
-            <article>
+              <div className="flex flex-wrap gap-2 mb-8">
+                <SkillBadge>Node.js</SkillBadge>
+                <SkillBadge>Express</SkillBadge>
+                <SkillBadge>PostgreSQL</SkillBadge>
+                <SkillBadge>MongoDB</SkillBadge>
+                <SkillBadge>Prisma</SkillBadge>
+                <SkillBadge>REST API</SkillBadge>
+              </div>
+            </div>
+            <div>
               <h4 className="font-bold mb-6">Testing</h4>
-              <aside className="flex flex-wrap gap-2 mb-8">
-                <span className="px-3 py-1 bg-zinc-800 text-zinc-300 rounded-md text-xs border border-zinc-700">Jest</span>
-                <span className="px-3 py-1 bg-zinc-800 text-zinc-300 rounded-md text-xs border border-zinc-700">Vitest</span>
-                <span className="px-3 py-1 bg-zinc-800 text-zinc-300 rounded-md text-xs border border-zinc-700">React Testing Library</span>
-              </aside>
-            </article>
-            <article>
+              <div className="flex flex-wrap gap-2 mb-8">
+                <SkillBadge>Jest</SkillBadge>
+                <SkillBadge>Vitest</SkillBadge>
+                <SkillBadge>React Testing Library</SkillBadge>
+              </div>
+            </div>
+            <div>
               <h4 className="font-bold mb-6">AI & Productivity</h4>
-              <aside className="flex flex-wrap gap-2 mb-8">
-                <span className="px-3 py-1 bg-zinc-800 text-zinc-300 rounded-md text-xs border border-zinc-700">ChatGPT</span>
-                <span className="px-3 py-1 bg-zinc-800 text-zinc-300 rounded-md text-xs border border-zinc-700">GitHub Copilot</span>
-                <span className="px-3 py-1 bg-zinc-800 text-zinc-300 rounded-md text-xs border border-zinc-700">Cursor AI</span>
-              </aside>
-            </article>
-            <article>
+              <div className="flex flex-wrap gap-2 mb-8">
+                <SkillBadge>ChatGPT</SkillBadge>
+                <SkillBadge>GitHub Copilot</SkillBadge>
+                <SkillBadge>Cursor AI</SkillBadge>
+              </div>
+            </div>
+            <div>
               <h4 className="font-bold mb-6">Other Tools</h4>
-              <aside className="flex flex-wrap gap-2 mb-8">
-                <span className="px-3 py-1 bg-zinc-800 text-zinc-300 rounded-md text-xs border border-zinc-700">Git</span>
-                <span className="px-3 py-1 bg-zinc-800 text-zinc-300 rounded-md text-xs border border-zinc-700">Docker</span>
-                <span className="px-3 py-1 bg-zinc-800 text-zinc-300 rounded-md text-xs border border-zinc-700">Vercel</span>
-                <span className="px-3 py-1 bg-zinc-800 text-zinc-300 rounded-md text-xs border border-zinc-700">Firebase</span>
-                <span className="px-3 py-1 bg-zinc-800 text-zinc-300 rounded-md text-xs border border-zinc-700">Figma</span>
-                <span className="px-3 py-1 bg-zinc-800 text-zinc-300 rounded-md text-xs border border-zinc-700">Postman</span>
-              </aside>
-            </article>
-          </section>
-        </article>
+              <div className="flex flex-wrap gap-2 mb-8">
+                <SkillBadge>Git</SkillBadge>
+                <SkillBadge>Docker</SkillBadge>
+                <SkillBadge>Vercel</SkillBadge>
+                <SkillBadge>Firebase</SkillBadge>
+                <SkillBadge>Figma</SkillBadge>
+                <SkillBadge>Postman</SkillBadge>
+              </div>
+            </div>
+          </aside>
+        </div>
 
         {/* Download PDF Button */}
         <Reveal>
@@ -193,13 +202,10 @@ export const Resume = () => {
             <a
               href="/resume/Straculencu Mihai CV.pdf"
               download
-              className="relative group"
+              className="px-6 py-3 bg-zinc-800 rounded-lg flex items-center gap-3 hover:bg-zinc-700 transition-colors border border-zinc-700 hover:border-emerald-500"
             >
-              <div className="absolute -inset-1 bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-lg blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
-              <button className="relative px-6 py-3 bg-zinc-800 rounded-lg leading-none flex items-center gap-3 hover:bg-zinc-700 transition-colors">
-                <FiDownload className="text-emerald-400 text-xl group-hover:animate-bounce transition-transform" />
-                <span className="text-zinc-300 font-medium">Download Resume as PDF</span>
-              </button>
+              <FiDownload className="text-emerald-400 text-xl" />
+              <span className="text-zinc-300 font-medium">Download Resume as PDF</span>
             </a>
           </div>
         </Reveal>
