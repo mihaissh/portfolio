@@ -68,6 +68,7 @@ export const ProjectModal = ({
                       rel="noreferrer nofollow"
                       className="text-zinc-400 hover:text-emerald-300 transition-colors"
                       onClick={(e) => e.stopPropagation()}
+                      aria-label="View project on GitHub"
                     >
                       <FiGithub size={20} />
                     </a>
@@ -79,13 +80,14 @@ export const ProjectModal = ({
                       rel="noreferrer nofollow"
                       className="text-zinc-400 hover:text-emerald-300 transition-colors"
                       onClick={(e) => e.stopPropagation()}
+                      aria-label="Visit project website"
                     >
                       <FiGlobe size={20} />
                     </a>
                   )}
                 </div>
               </div>
-              <p className="text-sm text-zinc-500">{date}</p>
+              <p className="text-sm text-zinc-400">{date}</p>
             </div>
 
             {/* Modal Content */}

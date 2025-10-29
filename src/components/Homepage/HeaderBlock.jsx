@@ -2,16 +2,28 @@ import { Block } from "./Block";
 import { twMerge } from "tailwind-merge";
 import { FiArrowRight } from "react-icons/fi";
 import { Link } from "react-router-dom";
-import profileImg from "/profile.jpg";
 
 export const HeaderBlock = () => {
   return (
     <Block className="col-span-12 row-span-2 md:col-span-6">
-      <img
-        src={profileImg}
-        alt="Profile Picture"
-        className="mb-4 size-16 rounded-full object-cover"
-      />
+      <picture>
+        <source
+          type="image/webp"
+          srcSet="/optimized/profile-64w.webp 1x, /optimized/profile-128w.webp 2x, /optimized/profile-192w.webp 3x"
+        />
+        <source
+          type="image/jpeg"
+          srcSet="/optimized/profile-64w.jpg 1x, /optimized/profile-128w.jpg 2x, /optimized/profile-192w.jpg 3x"
+        />
+        <img
+          src="/optimized/profile-64w.jpg"
+          alt="Profile Picture"
+          className="mb-4 size-16 rounded-full object-cover"
+          width="64"
+          height="64"
+          loading="eager"
+        />
+      </picture>
       <h1 className="mb-12 text-4xl font-medium leading-tight">
         Hi, I'm Mihai.{" "}
         <span className="text-zinc-400">

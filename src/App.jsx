@@ -24,7 +24,7 @@ function App() {
             <FiHome className="h-10 w-10 text-emerald-400 transition-all duration-300 group-hover:scale-110" />
             <div className="absolute inset-0 -m-2 bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-full blur-md opacity-0 group-hover:opacity-30 transition-opacity duration-300" />
           </Link>
-          <div className="w-full">
+          <main className="w-full">
             <Suspense fallback={
               <div className="flex items-center justify-center min-h-[400px]">
                 <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-emerald-400"></div>
@@ -38,7 +38,7 @@ function App() {
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </Suspense>
-          </div>
+          </main>
           <Footer />
         </div>
       </div>

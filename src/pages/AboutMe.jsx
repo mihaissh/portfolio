@@ -16,7 +16,10 @@ export const AboutMe = () => {
           onClick={() => setEasterEggFound(!easterEggFound)}
         >
           <div className="absolute -inset-1 bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-lg blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
-          <button className="relative px-4 py-2 bg-zinc-800 rounded-lg leading-none flex items-center gap-2 hover:bg-zinc-700 transition-colors">
+          <button 
+            className="relative px-4 py-2 bg-zinc-800 rounded-lg leading-none flex items-center gap-2 hover:bg-zinc-700 transition-colors"
+            aria-label="Discover easter egg"
+          >
             <FiCode className="text-emerald-400 group-hover:rotate-12 transition-transform" />
             <span className="text-zinc-300 text-sm">{ easterEggFound ? "🎉" : "?" }</span>
           </button>
@@ -97,6 +100,7 @@ export const AboutMe = () => {
                   rel="noreferrer nofollow"
                   href="https://www.linkedin.com/in/straculencu-mihai/"
                   className="text-zinc-300 hover:text-emerald-300 transition-colors"
+                  aria-label="Visit my LinkedIn profile"
                 >
                   <FiLinkedin />
                 </a>
@@ -105,6 +109,7 @@ export const AboutMe = () => {
                   rel="noreferrer nofollow"
                   href="https://github.com/mihaissh"
                   className="text-zinc-300 hover:text-emerald-300 transition-colors"
+                  aria-label="Visit my GitHub profile"
                 >
                   <FiGithub />
                 </a>
@@ -113,6 +118,7 @@ export const AboutMe = () => {
                   rel="noreferrer nofollow"
                   href="https://discord.com/users/s_mihai"
                   className="text-zinc-300 hover:text-emerald-300 transition-colors"
+                  aria-label="Contact me on Discord"
                 >
                   <SiDiscord />
                 </a>
