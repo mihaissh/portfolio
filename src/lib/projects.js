@@ -202,55 +202,85 @@ export const projects = [
       },
     ],
   },
-  // {
-  //   id: 5,
-  //   project: "Library Management System",
-  //   date: "2025",
-  //   videoUrl: "/",
-  //   websiteUrl: "/",
-  //   githubUrl: "/",
-  //   shortDescription:
-  //     "Java backend for managing library inventory with Spring Boot.",
-  //   longDescription:
-  //     "Developed a Library Management System backend as an exam project for the Java Programming Course at IT School Romania. Implemented inventory management and database operations using PostgreSQL for data storage. Created RESTful APIs following MVC architecture and tested using Postman for API validation.",
-  //   features: [
-  //     "RESTful API design following MVC architecture",
-  //     "PostgreSQL database integration with Hibernate ORM",
-  //     "Library inventory management functionality",
-  //     "API testing and validation with Postman",
-  //   ],
-  //   frontendStacks: [],
-  //   backendStacks: [
-  //     {
-  //       name: "Java Logo",
-  //       path: "/tech/java.svg",
-  //     },
-  //     {
-  //       name: "Spring Boot Logo",
-  //       path: "/tech/spring.svg",
-  //     },
-  //     {
-  //       name: "Hibernate Logo",
-  //       path: "/tech/hibernate.svg",
-  //     },
-  //     {
-  //       name: "PostgreSQL Logo",
-  //       path: "/tech/postgresql.svg",
-  //     },
-  //   ],
-  //   clientLibraries: [
-  //     {
-  //       name: "Maven Logo",
-  //       path: "/tech/maven.svg",
-  //     },
-  //     {
-  //       name: "Postman Logo",
-  //       path: "/tech/postman.svg",
-  //     },
-  //     {
-  //       name: "Git Logo",
-  //       path: "/tech/git.svg",
-  //     },
-  //   ],
-  // },
+  {
+    id: 5,
+    project: "Sunset Theme",
+    date: "2025",
+    videoUrl: "/",
+    websiteUrl: "/",
+    githubUrl: "https://github.com/mihaissh/sunset_theme",
+    shortDescription:
+      "A warm, orange-themed Discord theme with floating panels and optimized performance.",
+    longDescription:
+      "Developed a custom Vencord theme for Discord with a warm, sunset-inspired color palette. Implemented floating panel design with modern aesthetics. Built development workflow with automated compilation and live-reload for rapid iteration. Created installation methods for easy user adoption via online themes or manual installation. Optimized CSS for performance and smooth animations.",
+    features: [
+      "Warm, orange-themed color palette with sunset aesthetics",
+      "Floating panel design for modern UI experience",
+      "Automated development workflow with live compilation",
+      "Multiple installation methods for user convenience",
+      "Performance-optimized CSS with smooth animations",
+    ],
+    frontendStacks: [
+      {
+        name: "CSS Logo",
+        path: "/tech/css.svg",
+      },
+      {
+        name: "Javascript Logo",
+        path: "/tech/javascript.svg",
+      },
+    ],
+    backendStacks: [],
+    clientLibraries: [
+      {
+        name: "Git Logo",
+        path: "/tech/git.svg",
+      },
+    ],
+  },
+  {
+    id: 6,
+    project: "Quin69 VOD Archive",
+    date: "2025",
+    videoUrl: "/",
+    websiteUrl: "/",
+    githubUrl: "https://github.com/mihaissh/quin69VOD",
+    shortDescription:
+      "Modern website for browsing and watching Quin69's Twitch VODs with chat replay.",
+    longDescription:
+      "Built a comprehensive VOD archive platform for Quin69's Twitch content using React and Material-UI. Implemented real-time chat replay synchronized with video playback. Created smart filtering and search functionality for thousands of VODs by date, title, and game. Optimized performance with lazy loading, code splitting, and server-side compression achieving 60-80% file size reduction. Designed fully responsive interface with keyboard shortcuts and accessibility features. Deployed on Netlify with automated CI/CD pipeline.",
+    features: [
+      "Real-time chat replay synchronized with video playback",
+      "Smart filters and search across thousands of VODs",
+      "Quick navigation with game/section timestamps for long streams",
+      "Optimized performance with 60-80% file size reduction",
+      "Fully responsive design with accessibility support",
+      "Automated deployment with CI/CD pipeline",
+    ],
+    frontendStacks: [
+      {
+        name: "React Logo",
+        path: "/tech/react.svg",
+      },
+      {
+        name: "Javascript Logo",
+        path: "/tech/javascript.svg",
+      },
+      {
+        name: "CSS Logo",
+        path: "/tech/css.svg",
+      },
+    ],
+    backendStacks: [],
+    clientLibraries: [
+      {
+        name: "Git Logo",
+        path: "/tech/git.svg",
+      },
+      {
+        name: "Vercel Logo",
+        path: "/tech/vercel.svg",
+      },
+    ],
+  },
 ];

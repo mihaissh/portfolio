@@ -1,11 +1,14 @@
 import { Block } from "./Block";
 import { twMerge } from "tailwind-merge";
 import { FiArrowRight } from "react-icons/fi";
+import { Link } from "react-router-dom";
+import profileImg from "/profile.jpg";
+
 export const HeaderBlock = () => {
   return (
     <Block className="col-span-12 row-span-2 md:col-span-6">
       <img
-        src="/profile.jpg"
+        src={profileImg}
         alt="Profile Picture"
         className="mb-4 size-16 rounded-full object-cover"
       />
@@ -16,15 +19,15 @@ export const HeaderBlock = () => {
         </span>
       </h1>
       <nav className="flex items-center justify-between">
-        <a
-          href="/about-me"
+        <Link
+          to="/about-me"
           className="group flex items-center gap-1 text-white hover:underline"
         >
           About me{" "}
           <FiArrowRight className="group-hover:translate-x-2 transition-all duration-200" />
-        </a>
-        <a
-          href="/about-me"
+        </Link>
+        <Link
+          to="/resume"
           className={twMerge(
             `relative z-0 flex items-center gap-2 overflow-hidden rounded-md border-[1px] 
             border-white px-4 py-2 font-medium text-sm
@@ -44,7 +47,7 @@ export const HeaderBlock = () => {
           )}
         >
           Resume
-        </a>
+        </Link>
       </nav>
     </Block>
   );
