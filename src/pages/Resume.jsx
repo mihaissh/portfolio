@@ -162,7 +162,6 @@ export const Resume = () => {
                 <SkillBadge>Express</SkillBadge>
                 <SkillBadge>PostgreSQL</SkillBadge>
                 <SkillBadge>MongoDB</SkillBadge>
-                <SkillBadge>Prisma</SkillBadge>
                 <SkillBadge>REST API</SkillBadge>
               </div>
             </div>
@@ -170,7 +169,6 @@ export const Resume = () => {
               <h4 className="font-bold mb-6">Testing</h4>
               <div className="flex flex-wrap gap-2 mb-8">
                 <SkillBadge>Jest</SkillBadge>
-                <SkillBadge>Vitest</SkillBadge>
                 <SkillBadge>React Testing Library</SkillBadge>
               </div>
             </div>
@@ -189,7 +187,6 @@ export const Resume = () => {
                 <SkillBadge>Docker</SkillBadge>
                 <SkillBadge>Vercel</SkillBadge>
                 <SkillBadge>Firebase</SkillBadge>
-                <SkillBadge>Figma</SkillBadge>
                 <SkillBadge>Postman</SkillBadge>
               </div>
             </div>
