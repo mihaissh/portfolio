@@ -20,7 +20,7 @@ export const Resume = () => {
               <h2 className="text-2xl font-bold text-white mb-2">
                 Mihai Straculencu
               </h2>
-              <p className="text-emerald-400 text-lg mb-4">Full-Stack Developer</p>
+              <p className="text-emerald-400 text-lg mb-4">Frontend Developer</p>
             </Reveal>
 
             <Reveal>
@@ -42,7 +42,7 @@ export const Resume = () => {
             <Reveal>
               <h3 className="text-xl font-bold text-white mt-6 mb-3">Professional Summary</h3>
               <p className="leading-relaxed text-zinc-300">
-                Full-stack developer from Cluj-Napoca specializing in building modern, 
+                Frontend developer from Cluj-Napoca specializing in building modern, 
                 scalable web applications. Proficient in{" "}
                 <span className="font-bold text-emerald-400">
                   React, Next.js, TypeScript, Node.js, Express, PostgreSQL, and MongoDB
@@ -59,7 +59,7 @@ export const Resume = () => {
             <Reveal>
               <h3 className="text-xl font-bold text-white mt-8 mb-3">Experience</h3>
               <div>
-                <h4 className="font-bold text-emerald-400">Full-Stack Developer</h4>
+                <h4 className="font-bold text-emerald-400">Frontend Developer</h4>
                 <p className="text-sm text-zinc-400 mb-2">Freelance & Personal Projects</p>
                 <ul className="space-y-2 text-zinc-300 text-sm leading-relaxed">
                   <li className="flex gap-2">
