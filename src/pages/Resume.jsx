@@ -34,7 +34,7 @@ export const Resume = () => {
                 </a>
                 <div className="flex items-center gap-2 text-zinc-300">
                   <FiMapPin className="text-emerald-400" />
-                  <span className="text-sm">Cluj-Napoca, Romania</span>
+                  <span className="text-sm">Brasov, Romania</span>
                 </div>
               </div>
             </Reveal>
@@ -42,7 +42,7 @@ export const Resume = () => {
             <Reveal>
               <h3 className="text-xl font-bold text-white mt-6 mb-3">Professional Summary</h3>
               <p className="leading-relaxed text-zinc-300">
-                Frontend developer from Cluj-Napoca specializing in building modern, 
+                Frontend developer from Brasov specializing in building modern, 
                 scalable web applications. Proficient in{" "}
                 <span className="font-bold text-emerald-400">
                   React, Next.js, TypeScript, Node.js, Express, PostgreSQL, and MongoDB
@@ -197,7 +197,7 @@ export const Resume = () => {
         <Reveal>
           <div className="flex justify-center mt-12">
             <a
-              href="/resume/Straculencu Mihai CV.pdf"
+              href="/resume/MS-Resume.pdf"
               download
               className="px-6 py-3 bg-zinc-800 rounded-lg flex items-center gap-3 hover:bg-zinc-700 transition-colors border border-zinc-700 hover:border-emerald-500"
             >
