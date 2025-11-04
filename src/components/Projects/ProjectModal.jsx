@@ -44,7 +44,7 @@ export const ProjectModal = ({
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.9, opacity: 0 }}
             onClick={(e) => e.stopPropagation()}
-            className="relative w-full max-w-3xl rounded-lg bg-zinc-900 border border-zinc-700 p-6 md:p-8 shadow-xl my-8"
+            className="relative w-full max-w-3xl rounded-lg bg-zinc-900 border border-zinc-700 p-4 md:p-8 shadow-xl my-2 md:my-8"
           >
             {/* Close button */}
             <button
@@ -55,7 +55,7 @@ export const ProjectModal = ({
             </button>
 
             {/* Modal Header */}
-            <div className="mb-6 pr-8">
+            <div className="mb-4 md:mb-6 pr-8">
               <div className="flex items-center gap-2 mb-2">
                 <h2 className="text-3xl font-bold text-zinc-100">
                   {project}
@@ -91,7 +91,7 @@ export const ProjectModal = ({
             </div>
 
             {/* Modal Content */}
-            <div className="space-y-6 max-h-[60vh] overflow-y-auto pr-2 custom-scrollbar">
+            <div className="space-y-4 md:space-y-6 max-h-[60vh] overflow-y-auto pr-2 custom-scrollbar">
               {/* Description */}
               <div>
                 <h3 className="text-lg font-semibold text-zinc-200 mb-2">
@@ -212,7 +212,7 @@ export const ProjectModal = ({
             </div>
 
             {/* Modal Footer - Action Buttons */}
-            <div className="flex gap-3 pt-6 mt-6 border-t border-zinc-800">
+            <div className="flex gap-3 pt-4 mt-4 md:pt-6 md:mt-6 border-t border-zinc-800">
               {githubUrl && githubUrl !== "/" && (
                 <a
                   href={githubUrl}

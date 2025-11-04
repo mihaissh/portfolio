@@ -237,12 +237,12 @@ export const projects = [
     id: 6,
     project: "Quin69 VOD Archive",
     date: "2025",
-    websiteUrl: "/",
+    websiteUrl: "https://quin69-vod.vercel.app/",
     githubUrl: "https://github.com/mihaissh/quin69VOD",
     shortDescription:
       "Modern website for browsing and watching Quin69's Twitch VODs with chat replay.",
     longDescription:
-      "Built a comprehensive VOD archive platform for Quin69's Twitch content using React and Material-UI. Implemented real-time chat replay synchronized with video playback. Created smart filtering and search functionality for thousands of VODs by date, title, and game. Optimized performance with lazy loading, code splitting, and server-side compression achieving 60-80% file size reduction. Designed fully responsive interface with keyboard shortcuts and accessibility features. Deployed on Netlify with automated CI/CD pipeline.",
+      "Built a comprehensive VOD archive platform for Quin69's Twitch content using React and Material-UI. Implemented real-time chat replay synchronized with video playback. Created smart filtering and search functionality for thousands of VODs by date, title, and game. Optimized performance with lazy loading, code splitting, and server-side compression achieving 60-80% file size reduction. Designed fully responsive interface with keyboard shortcuts and accessibility features. Deployed on Vercel with automated CI/CD pipeline.",
     features: [
       "Real-time chat replay synchronized with video playback",
       "Smart filters and search across thousands of VODs",
@@ -274,6 +274,46 @@ export const projects = [
       {
         name: "Vercel Logo",
         path: "/tech/vercel.svg",
+      },
+    ],
+  },
+  {
+    id: 7,
+    project: "Quin69 Playlist Tracker",
+    date: "2025",
+    websiteUrl: "https://mihaissh.github.io/quin69-playlist-tracker/",
+    githubUrl: "https://github.com/mihaissh/quin69-playlist-tracker",
+    shortDescription:
+      "Real-time tracker for Quin69's chat-requested songs with Spotify and YouTube search.",
+    longDescription:
+      "Developed a real-time playlist tracker for Twitch.tv/Quin69 using Next.js 14 and TypeScript. Implemented automatic data refresh every 30 seconds to fetch the latest song requests from Sheepfarmer's chat logs. Created quick-search functionality to find songs on Spotify and YouTube with one click. Designed a fast, lightweight, and fully responsive interface using Tailwind CSS. Deployed on GitHub Pages with automated CI/CD workflow for seamless updates.",
+    features: [
+      "Auto-refreshes every 30 seconds for real-time updates",
+      "Quick search integration for Spotify and YouTube",
+      "Displays currently playing and recently played songs",
+      "Fast and lightweight with optimized performance",
+      "Fully responsive design for mobile and desktop",
+      "Automated deployment with GitHub Actions",
+    ],
+    frontendStacks: [
+      {
+        name: "NextJS Logo",
+        path: "/tech/nextjs.svg",
+      },
+      {
+        name: "TypeScript Logo",
+        path: "/tech/typescript.svg",
+      },
+      {
+        name: "TailwindCSS Logo",
+        path: "/tech/tailwindcss.svg",
+      },
+    ],
+    backendStacks: [],
+    clientLibraries: [
+      {
+        name: "Git Logo",
+        path: "/tech/git.svg",
       },
     ],
   },
