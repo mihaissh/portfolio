@@ -317,4 +317,96 @@ export const projects = [
       },
     ],
   },
+  {
+    id: 8,
+    project: "Romstal Codes",
+    date: "2025",
+    websiteUrl: "https://romstal-codes.vercel.app/",
+    githubUrl: "https://github.com/mihaissh/romstal-codes",
+    shortDescription:
+      "Search tool for Romstal Brașov and Bran stock codes by product name.",
+    longDescription:
+      "Built a fast search tool that uses the stock catalogs for Romstal Brașov and Bran. Instead of memorizing codes, users type a product name and get the matching code instantly, making daily lookup faster and easier. Implemented a clean, responsive UI and deployed on Vercel for reliable access.",
+    features: [
+      "Search by product name to find the correct stock code",
+      "Includes both Romstal Brașov and Bran catalogs",
+      "Fast, lightweight UI for quick daily lookup",
+      "Responsive layout for desktop and mobile use",
+    ],
+    frontendStacks: [
+      {
+        name: "React Logo",
+        path: "/tech/react.svg",
+      },
+      {
+        name: "TypeScript Logo",
+        path: "/tech/typescript.svg",
+      },
+      {
+        name: "Vite Logo",
+        path: "/tech/vite.svg",
+      },
+      {
+        name: "CSS Logo",
+        path: "/tech/css.svg",
+      },
+    ],
+    backendStacks: [],
+    clientLibraries: [
+      {
+        name: "Git Logo",
+        path: "/tech/git.svg",
+      },
+      {
+        name: "Vercel Logo",
+        path: "/tech/vercel.svg",
+      },
+    ],
+  },
+  {
+    id: 9,
+    project: "Romstal Rest Calculator",
+    date: "2026",
+    websiteUrl: "https://romstalrest.vercel.app/",
+    githubUrl: "https://github.com/mihaissh/romstal.rest",
+    shortDescription:
+      "Modern cashier change calculator with denomination breakdown and smart rounding.",
+    longDescription:
+      "Built a responsive change calculator that computes the exact rest to return and breaks it down by Romanian banknotes and coins. Added smart rounding rules, input validation, and dark/light themes for daily usability. Included optional denomination imagery and deployed the app on Vercel.",
+    features: [
+      "Instant change calculation with denomination breakdown",
+      "Smart rounding rule for totals",
+      "Dark/light theme toggle with saved preference",
+      "Responsive layout with input validation",
+    ],
+    frontendStacks: [
+      {
+        name: "React Logo",
+        path: "/tech/react.svg",
+      },
+      {
+        name: "Javascript Logo",
+        path: "/tech/javascript.svg",
+      },
+      {
+        name: "Vite Logo",
+        path: "/tech/vite.svg",
+      },
+      {
+        name: "TailwindCSS Logo",
+        path: "/tech/tailwindcss.svg",
+      },
+    ],
+    backendStacks: [],
+    clientLibraries: [
+      {
+        name: "Git Logo",
+        path: "/tech/git.svg",
+      },
+      {
+        name: "Vercel Logo",
+        path: "/tech/vercel.svg",
+      },
+    ],
+  },
 ];

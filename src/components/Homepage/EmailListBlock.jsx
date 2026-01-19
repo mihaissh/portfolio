@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { Block } from "./Block";
 import { FiMail, FiX, FiCheck, FiAlertCircle } from "react-icons/fi";
-import emailjs from "@emailjs/browser";
 
 export const EmailListBlock = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -50,6 +49,7 @@ export const EmailListBlock = () => {
     setSubmitStatus(null);
 
     try {
+      const { default: emailjs } = await import("@emailjs/browser");
       // EmailJS configuration from environment variables
       const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
       const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;

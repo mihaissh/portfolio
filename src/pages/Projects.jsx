@@ -4,9 +4,8 @@ import { projects } from "../lib/projects";
 import { SectionHeader } from "../components/About/SectionHeader";
 import { Reveal } from "../components/About/Reveal";
 
-// Optimized smaller image for better performance
-const src =
-  "https://images.unsplash.com/photo-1687603921109-46401b201195?q=60&w=800&auto=format&fit=crop";
+// Local, cached image to avoid external requests on first load
+const src = "/optimized/profile-192w.jpg";
 export const Projects = () => {
   return (
     <main className="mx-auto max-w-5xl px-4 md:px-8 pb-24 relative">

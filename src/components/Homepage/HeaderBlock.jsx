@@ -22,6 +22,8 @@ export const HeaderBlock = () => {
           width="64"
           height="64"
           loading="eager"
+          decoding="async"
+          fetchpriority="high"
         />
       </picture>
       <h1 className="mb-12 text-4xl font-medium leading-tight">
