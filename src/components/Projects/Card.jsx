@@ -29,9 +29,10 @@ export const Card = ({
           <FiCalendar className="text-base" />
           <span>{date}</span>
         </aside>
-        <h2 className="relative z-10 font-medium text-xl leading-tight transition-transform duration-500 group-hover:-translate-y-3">
-          <span className="font-bold text-3xl underline">{project}</span>{" "}
-          {shortDescription}
+        <h2 className="relative z-10 text-center font-semibold text-2xl leading-tight transition-transform duration-500 group-hover:-translate-y-3">
+          <span className="text-4xl font-extrabold tracking-tight bg-gradient-to-r from-emerald-300 via-emerald-200 to-cyan-300 bg-clip-text text-transparent underline decoration-emerald-400/60 decoration-2 underline-offset-4 drop-shadow-sm">
+            {project}
+          </span>
         </h2>
         <aside className="absolute flex items-center gap-4 right-3 top-4 z-10 text-2xl text-zinc-400 transition-colors group-hover:text-zinc-50">
           {githubUrl && githubUrl !== "/" && (
@@ -45,12 +46,12 @@ export const Card = ({
             </a>
           )}
         </aside>
-        <img
-          className="absolute h-full bg-cover bg-center bottom-0 left-0 right-0 top-0 opacity-0 blur-sm grayscale transition-all group-hover:opacity-10 group-active:scale-105 group-active:opacity-30 group-active:blur-sm group-active:grayscale-0"
-          src={src}
-          alt="Background Image"
-          loading="lazy"
-        />
+        <div
+          className="pointer-events-none absolute inset-0 opacity-0 blur-sm transition-all duration-500 group-hover:opacity-35 group-active:opacity-50"
+          aria-hidden="true"
+        >
+          <div className="h-full w-full bg-gradient-to-br from-fuchsia-500/50 via-cyan-400/40 to-emerald-400/50" />
+        </div>
         <Corners />
       </aside>
       
