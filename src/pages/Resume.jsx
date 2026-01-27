@@ -1,7 +1,8 @@
-import { FiGithub, FiLinkedin, FiArrowRight, FiDownload, FiMail, FiMapPin } from "react-icons/fi";
+import { FiGithub, FiLinkedin, FiArrowRight, FiMail, FiMapPin } from "react-icons/fi";
 import { SiDiscord } from "react-icons/si";
 import { SectionHeader } from "../components/About/SectionHeader";
 import { Reveal } from "../components/About/Reveal";
+import { CertificationSection } from "../components/Resume/CertificationSection";
 
 const SkillBadge = ({ children }) => (
   <span className="px-3 py-1 bg-zinc-800 text-zinc-300 rounded-md text-xs border border-zinc-700">
@@ -193,19 +194,7 @@ export const Resume = () => {
           </aside>
         </div>
 
-        {/* Download PDF Button */}
-        <Reveal>
-          <div className="flex justify-center mt-12">
-            <a
-              href="/resume/MS-Resume.pdf"
-              download
-              className="px-6 py-3 bg-zinc-800 rounded-lg flex items-center gap-3 hover:bg-zinc-700 transition-colors border border-zinc-700 hover:border-emerald-500"
-            >
-              <FiDownload className="text-emerald-400 text-xl" />
-              <span className="text-zinc-300 font-medium">Download Resume as PDF</span>
-            </a>
-          </div>
-        </Reveal>
+        <CertificationSection pdfSrc="/resume/mihai-straculencu-certificare.pdf" />
       </section>
     </main>
   );
