@@ -1,6 +1,20 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { FiX, FiGithub, FiGlobe } from "react-icons/fi";
+import { FiX, FiGithub, FiGlobe, FiCalendar, FiCpu, FiLayout, FiBox, FiArrowRight } from "react-icons/fi";
 import { useEffect } from "react";
+
+const TechTag = ({ tech }) => (
+  <div className="flex items-center gap-2 bg-zinc-800/30 border border-zinc-700/30 rounded-xl px-3 py-2 backdrop-blur-md hover:bg-zinc-700/50 transition-all group/tag">
+    <img
+      src={tech.path}
+      alt={tech.name}
+      className="h-4 w-4 grayscale group-hover/tag:grayscale-0 transition-all duration-500"
+      loading="lazy"
+    />
+    <span className="text-xs font-medium text-zinc-400 group-hover/tag:text-zinc-100 transition-colors">
+      {tech.name.replace(" Logo", "")}
+    </span>
+  </div>
+);
 
 export const ProjectModal = ({
   isOpen,
@@ -15,15 +29,12 @@ export const ProjectModal = ({
   clientLibraries,
   longDescription,
 }) => {
-  // Prevent background scroll when modal is open
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "unset";
     }
-
-    // Cleanup function to restore scroll when component unmounts
     return () => {
       document.body.style.overflow = "unset";
     };
@@ -32,196 +43,109 @@ export const ProjectModal = ({
   return (
     <AnimatePresence>
       {isOpen && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          onClick={onClose}
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4 overflow-y-auto"
-        >
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-6">
+          {/* Backdrop */}
           <motion.div
-            initial={{ scale: 0.9, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            exit={{ scale: 0.9, opacity: 0 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={onClose}
+            className="absolute inset-0 bg-zinc-950/80 backdrop-blur-md"
+          />
+
+          {/* Floating Card */}
+          <motion.div
+            initial={{ y: 20, opacity: 0, scale: 0.95 }}
+            animate={{ y: 0, opacity: 1, scale: 1 }}
+            exit={{ y: 20, opacity: 0, scale: 0.95 }}
+            transition={{ type: "spring", damping: 25, stiffness: 300 }}
             onClick={(e) => e.stopPropagation()}
-            className="relative w-full max-w-3xl rounded-lg bg-zinc-900 border border-zinc-700 p-4 md:p-8 shadow-xl my-2 md:my-8"
+            className="relative w-full max-w-4xl max-h-[85vh] overflow-hidden rounded-[2rem] bg-zinc-900 border border-zinc-800/50 shadow-2xl flex flex-col"
           >
-            {/* Close button */}
+            {/* Close Button */}
             <button
               onClick={onClose}
-              className="absolute right-4 top-4 text-zinc-400 hover:text-zinc-100 transition-colors z-10"
+              className="absolute top-6 right-6 z-30 h-10 w-10 rounded-full bg-zinc-800/50 border border-zinc-700/50 flex items-center justify-center text-zinc-400 hover:text-white hover:bg-zinc-700 transition-all"
             >
-              <FiX size={24} />
+              <FiX size={18} />
             </button>
 
-            {/* Modal Header */}
-            <div className="mb-4 md:mb-6 pr-8">
-              <div className="flex items-center gap-2 mb-2">
-                <h2 className="text-3xl font-bold text-zinc-100">
-                  {project}
-                </h2>
-                <div className="flex items-center gap-3 ml-auto">
-                  {githubUrl && githubUrl !== "/" && (
-                    <a 
-                      href={githubUrl} 
-                      target="_blank"
-                      rel="noreferrer nofollow"
-                      className="text-zinc-400 hover:text-emerald-300 transition-colors"
-                      onClick={(e) => e.stopPropagation()}
-                      aria-label="View project on GitHub"
-                    >
-                      <FiGithub size={20} />
-                    </a>
+            {/* Content Area */}
+            <div className="flex-1 overflow-y-auto custom-scrollbar p-8 md:p-12">
+              <div className="space-y-12">
+                {/* Header */}
+                <header>
+                  <div className="flex items-center gap-2 text-emerald-400 font-mono text-[10px] uppercase tracking-[0.2em] mb-4">
+                    <FiCalendar /> {date}
+                  </div>
+                  <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-6">
+                    {project}
+                  </h2>
+                  <p className="text-lg text-zinc-400 leading-relaxed font-light max-w-2xl">
+                    {longDescription}
+                  </p>
+                </header>
+
+                {/* Grid Info */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 border-t border-zinc-800/50 pt-12">
+                  {/* Features */}
+                  {features && features.length > 0 && (
+                    <div className="space-y-6">
+                      <h3 className="text-[10px] font-bold text-zinc-500 uppercase tracking-[0.2em] flex items-center gap-2">
+                        <FiLayout className="text-emerald-500" /> Key Features
+                      </h3>
+                      <ul className="space-y-4">
+                        {features.map((feature, i) => (
+                          <li key={i} className="flex items-start gap-3 text-zinc-400 group">
+                            <span className="h-1 w-1 rounded-full bg-emerald-500/50 mt-2 group-hover:bg-emerald-400 transition-colors" />
+                            <span className="text-sm leading-relaxed">{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   )}
-                  {websiteUrl && websiteUrl !== "/" && (
-                    <a 
-                      href={websiteUrl} 
-                      target="_blank"
-                      rel="noreferrer nofollow"
-                      className="text-zinc-400 hover:text-emerald-300 transition-colors"
-                      onClick={(e) => e.stopPropagation()}
-                      aria-label="Visit project website"
-                    >
-                      <FiGlobe size={20} />
-                    </a>
-                  )}
+
+                  {/* Stack */}
+                  <div className="space-y-8">
+                    <h3 className="text-[10px] font-bold text-zinc-500 uppercase tracking-[0.2em] flex items-center gap-2">
+                      <FiCpu className="text-emerald-500" /> Technology
+                    </h3>
+                    
+                    <div className="space-y-6">
+                      {frontendStacks?.length > 0 && (
+                        <div className="space-y-3">
+                          <p className="text-[9px] font-bold text-zinc-600 uppercase tracking-widest">Frontend</p>
+                          <div className="flex flex-wrap gap-2">
+                            {frontendStacks.map((tech, i) => <TechTag key={i} tech={tech} />)}
+                          </div>
+                        </div>
+                      )}
+                      
+                      {backendStacks?.length > 0 && (
+                        <div className="space-y-3">
+                          <p className="text-[9px] font-bold text-zinc-600 uppercase tracking-widest">Backend</p>
+                          <div className="flex flex-wrap gap-2">
+                            {backendStacks.map((tech, i) => <TechTag key={i} tech={tech} />)}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  </div>
                 </div>
-              </div>
-              <p className="text-sm text-zinc-400">{date}</p>
-            </div>
-
-            {/* Modal Content */}
-            <div className="space-y-4 md:space-y-6 max-h-[60vh] overflow-y-auto pr-2 custom-scrollbar">
-              {/* Description */}
-              <div>
-                <h3 className="text-lg font-semibold text-zinc-200 mb-2">
-                  About
-                </h3>
-                <p className="text-zinc-400 leading-relaxed">
-                  {longDescription}
-                </p>
-              </div>
-
-              {/* Features */}
-              {features && features.length > 0 && (
-                <div>
-                  <h3 className="text-lg font-semibold text-zinc-200 mb-3">
-                    Key Features
-                  </h3>
-                  <ul className="space-y-2">
-                    {features.map((feature, i) => (
-                      <li
-                        key={i}
-                        className="text-zinc-400 text-sm flex items-start gap-2"
-                      >
-                        <span className="text-emerald-400 mt-1">•</span>
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-
-              {/* Tech Stacks */}
-              <div className="space-y-4">
-                <h3 className="text-lg font-semibold text-zinc-200 mb-3">
-                  Technology Stack
-                </h3>
-                
-                {/* Frontend */}
-                {frontendStacks && frontendStacks.length > 0 && (
-                  <div>
-                    <h4 className="text-sm font-medium text-zinc-300 mb-2">
-                      Frontend
-                    </h4>
-                    <div className="flex flex-wrap gap-3">
-                      {frontendStacks.map((tech, i) => (
-                        <div
-                          key={i}
-                          className="flex items-center gap-2 bg-zinc-800 border border-zinc-700 rounded-lg px-3 py-2 hover:border-zinc-600 transition-colors"
-                        >
-                          <img
-                            src={tech.path}
-                            alt={tech.name}
-                            className="h-5 w-5"
-                            loading="lazy"
-                          />
-                          <span className="text-xs text-zinc-300">
-                            {tech.name.replace(" Logo", "")}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )}
-
-                {/* Backend */}
-                {backendStacks && backendStacks.length > 0 && (
-                  <div>
-                    <h4 className="text-sm font-medium text-zinc-300 mb-2">
-                      Backend
-                    </h4>
-                    <div className="flex flex-wrap gap-3">
-                      {backendStacks.map((tech, i) => (
-                        <div
-                          key={i}
-                          className="flex items-center gap-2 bg-zinc-800 border border-zinc-700 rounded-lg px-3 py-2 hover:border-zinc-600 transition-colors"
-                        >
-                          <img
-                            src={tech.path}
-                            alt={tech.name}
-                            className="h-5 w-5"
-                            loading="lazy"
-                          />
-                          <span className="text-xs text-zinc-300">
-                            {tech.name.replace(" Logo", "")}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )}
-
-                {/* Other Libraries/Tools */}
-                {clientLibraries && clientLibraries.length > 0 && (
-                  <div>
-                    <h4 className="text-sm font-medium text-zinc-300 mb-2">
-                      Tools & Libraries
-                    </h4>
-                    <div className="flex flex-wrap gap-3">
-                      {clientLibraries.map((tech, i) => (
-                        <div
-                          key={i}
-                          className="flex items-center gap-2 bg-zinc-800 border border-zinc-700 rounded-lg px-3 py-2 hover:border-zinc-600 transition-colors"
-                        >
-                          <img
-                            src={tech.path}
-                            alt={tech.name}
-                            className="h-5 w-5"
-                            loading="lazy"
-                          />
-                          <span className="text-xs text-zinc-300">
-                            {tech.name.replace(" Logo", "")}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )}
               </div>
             </div>
 
-            {/* Modal Footer - Action Buttons */}
-            <div className="flex gap-3 pt-4 mt-4 md:pt-6 md:mt-6 border-t border-zinc-800">
+            {/* Footer Actions */}
+            <div className="p-6 md:p-8 bg-zinc-900/50 backdrop-blur-xl border-t border-zinc-800/50 flex flex-col sm:flex-row gap-4">
               {githubUrl && githubUrl !== "/" && (
                 <a
                   href={githubUrl}
                   target="_blank"
                   rel="noreferrer nofollow"
-                  className="flex-1 flex items-center justify-center gap-2 rounded border border-zinc-700 px-4 py-2.5 text-sm font-medium text-zinc-300 transition-colors hover:bg-zinc-800 hover:border-zinc-600"
-                  onClick={(e) => e.stopPropagation()}
+                  className="flex-1 h-14 flex items-center justify-center gap-3 rounded-2xl border border-zinc-700/50 bg-zinc-800/30 text-zinc-400 font-bold hover:bg-zinc-800 hover:text-white transition-all group"
                 >
-                  <FiGithub /> View Code
+                  <FiGithub className="text-xl group-hover:scale-110 transition-transform" />
+                  View Source
                 </a>
               )}
               {websiteUrl && websiteUrl !== "/" && (
@@ -229,17 +153,16 @@ export const ProjectModal = ({
                   href={websiteUrl}
                   target="_blank"
                   rel="noreferrer nofollow"
-                  className="flex-1 flex items-center justify-center gap-2 rounded bg-zinc-50 px-4 py-2.5 text-sm font-medium text-zinc-900 transition-colors hover:bg-zinc-300"
-                  onClick={(e) => e.stopPropagation()}
+                  className="flex-1 h-14 flex items-center justify-center gap-3 rounded-2xl bg-white text-black font-bold hover:bg-emerald-400 transition-all group shadow-xl"
                 >
-                  <FiGlobe /> Visit Website
+                  Live Preview
+                  <FiArrowRight className="text-xl group-hover:translate-x-1 transition-transform" />
                 </a>
               )}
             </div>
           </motion.div>
-        </motion.div>
+        </div>
       )}
     </AnimatePresence>
   );
 };
-

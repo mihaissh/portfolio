@@ -72,9 +72,12 @@ const CompassLoopIcon = ({ className }) => (
 
 export const LocationBlock = () => {
   return (
-    <Block className="col-span-12 flex flex-col items-center gap-4 md:col-span-3">
-      <CompassLoopIcon className="text-3xl" />
-      <p className="text-center text-lg text-zinc-400">Open for relocation</p>
+    <Block className="flex flex-col items-center gap-4 h-full justify-center bg-emerald-500/5 border-emerald-500/10 rounded-xl p-6">
+      <CompassLoopIcon className="text-3xl text-emerald-400" />
+      <div className="text-center">
+        <p className="text-base font-bold tracking-tight text-white uppercase">Brasov, RO</p>
+        <p className="text-[10px] font-mono uppercase tracking-widest text-zinc-500">Open for relocation</p>
+      </div>
     </Block>
   );
 };

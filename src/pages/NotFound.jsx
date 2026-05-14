@@ -30,7 +30,7 @@ export const NotFound = () => {
   };
 
   return (
-    <div className="bg-zinc-900 h-screen w-full">
+    <div className="h-screen w-full relative">
       <div
         ref={scope}
         className="grid h-screen w-full grid-cols-[repeat(auto-fit,_minmax(75px,_1fr))] grid-rows-[repeat(auto-fit,_minmax(75px,_1fr))]"
@@ -41,7 +41,7 @@ export const NotFound = () => {
             id={`square-${i}`}
             onMouseLeave={handleMouseLeave}
             onMouseEnter={handleMouseEnter}
-            className="h-full w-full border-[1px] border-zinc-900"
+            className="h-full w-full border-[1px] border-zinc-900/10"
           />
         ))}
       </div>

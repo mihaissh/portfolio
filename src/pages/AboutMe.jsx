@@ -1,132 +1,124 @@
 import { FiGithub, FiLinkedin, FiArrowRight, FiCode, FiHeart, FiCoffee } from "react-icons/fi";
 import { SiDiscord } from "react-icons/si";
-import { SectionHeader } from "../components/About/SectionHeader";
 import { Reveal } from "../components/About/Reveal";
 import { useState } from "react";
+import { motion } from "framer-motion";
+import { Block } from "../components/Homepage/Block";
+import { StarsCanvas } from "../components/Homepage/Stars";
 
 export const AboutMe = () => {
   const [easterEggFound, setEasterEggFound] = useState(false);
 
   return (
-    <main className="mx-auto max-w-3xl px-4 md:px-8 space-y-32 pb-24 relative">
-      {/* Easter Egg */}
-      <div className="fixed bottom-4 right-4 z-50">
-        <div 
-          className="relative group"
-          onClick={() => setEasterEggFound(!easterEggFound)}
-        >
-          <div className="absolute -inset-1 bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-lg blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
-          <button 
-            className="relative px-4 py-2 bg-zinc-800 rounded-lg leading-none flex items-center gap-2 hover:bg-zinc-700 transition-colors"
-            aria-label="Discover easter egg"
+    <div className="relative min-h-screen w-full">
+      <StarsCanvas />
+      
+      <main className="mx-auto max-w-6xl px-4 py-20 relative z-10">
+        {/* Header Section */}
+        <div className="mb-16">
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-5xl md:text-7xl font-bold tracking-tight leading-tight mb-4"
           >
-            <FiCode className="text-emerald-400 group-hover:rotate-12 transition-transform" />
-            <span className="text-zinc-300 text-sm">{ easterEggFound ? "🎉" : "?" }</span>
-          </button>
+            ABOUT <span className="text-zinc-600">ME</span>
+          </motion.h1>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            className="text-xl text-zinc-400 max-w-2xl"
+          >
+            I'm a developer from Brasov who genuinely enjoys building things on the web.
+          </motion.p>
         </div>
-        {easterEggFound && (
-          <div className="absolute bottom-16 right-0 w-64 bg-zinc-800 border border-emerald-500/30 rounded-lg p-4 shadow-xl animate-in fade-in slide-in-from-bottom-2 duration-300">
-            <p className="text-sm text-zinc-300 mb-2">
-              <span className="text-emerald-400 font-bold">Easter Egg Found! 🎊</span>
-            </p>
-            <p className="text-xs text-zinc-400">
-              "Code is like humor. When you have to explain it, it's bad." - Cory House
-            </p>
-            <div className="mt-3 flex gap-1">
-              <div className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></div>
-              <div className="h-2 w-2 rounded-full bg-cyan-500 animate-pulse delay-75"></div>
-              <div className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse delay-150"></div>
-            </div>
-          </div>
-        )}
-      </div>
 
-      <section className="section-wrapper mx-auto">
-        <SectionHeader title="AboutMe" dir="l" />
-        <article className="space-y-6">
-          <Reveal>
-            <p className="leading-relaxed text-zinc-300 text-lg">
-              Hey! I'm Mihai, a developer from Cluj-Napoca who genuinely enjoys 
-              building things on the web. What started as curiosity about how 
-              websites work turned into a passion for creating experiences that 
-              people actually want to use.
-            </p>
-          </Reveal>
+        <div className="grid grid-cols-12 gap-6">
+          {/* Main Content */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="col-span-12 md:col-span-8"
+          >
+            <Block className="space-y-8 p-8 md:p-12">
+              <Reveal>
+                <p className="text-xl md:text-2xl leading-relaxed text-zinc-300">
+                  Hey! I'm Mihai. What started as curiosity about how 
+                  websites work turned into a passion for creating experiences that 
+                  people actually want to use.
+                </p>
+              </Reveal>
 
-          <Reveal>
-            <p className="leading-relaxed text-zinc-300">
-              I love the problem-solving aspect of development—that moment when 
-              everything clicks and the solution feels just right. Whether it's 
-              crafting a smooth user interface or architecting a clean backend, 
-              I'm always chasing that feeling of building something that just{" "}
-              <span className="text-emerald-400 font-semibold italic">works</span>.
-            </p>
-          </Reveal>
+              <Reveal>
+                <p className="text-lg leading-relaxed text-zinc-400">
+                  I love the problem-solving aspect of development—that moment when 
+                  everything clicks and the solution feels just right. Whether it's 
+                  crafting a smooth user interface or architecting a clean backend, 
+                  I'm always chasing that feeling of building something that just{" "}
+                  <span className="text-emerald-400 font-semibold italic">works</span>.
+                </p>
+              </Reveal>
 
-          <Reveal>
-            <div className="bg-gradient-to-br from-emerald-900/20 to-zinc-900/50 p-6 rounded-lg border border-emerald-700/30">
-              <div className="flex items-center gap-2 mb-3">
-                <FiHeart className="text-emerald-400" />
-                <h3 className="font-bold text-white">When I'm Not Coding</h3>
+              <Reveal>
+                <div className="flex items-center justify-between gap-6 pt-8 border-t border-zinc-700/50">
+                  <div className="flex items-center gap-4 text-sm text-emerald-400">
+                    <FiCoffee />
+                    <span>Let's connect</span>
+                    <FiArrowRight />
+                  </div>
+                  <div className="flex items-center gap-6 text-2xl">
+                    <a href="https://www.linkedin.com/in/straculencu-mihai/" target="_blank" className="text-zinc-400 hover:text-white transition-colors"><FiLinkedin /></a>
+                    <a href="https://github.com/mihaissh" target="_blank" className="text-zinc-400 hover:text-white transition-colors"><FiGithub /></a>
+                    <a href="https://discord.com/users/s_mihai" target="_blank" className="text-zinc-400 hover:text-white transition-colors"><SiDiscord /></a>
+                  </div>
+                </div>
+              </Reveal>
+            </Block>
+          </motion.div>
+
+          {/* Sidebar Content */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+            className="col-span-12 md:col-span-4 space-y-6"
+          >
+            <Block className="bg-emerald-500/10 border-emerald-500/20 p-8">
+              <div className="flex items-center gap-3 mb-4">
+                <FiHeart className="text-emerald-400 text-xl" />
+                <h3 className="font-bold text-white text-xl">Interests</h3>
               </div>
-              <p className="leading-relaxed text-zinc-300 text-sm">
-                You'll find me in the pool swimming laps (it's my reset button), 
-                experimenting in the kitchen with new recipes, or just enjoying a 
-                good cup of coffee while reading about the latest tech trends. 
-                Balance is key, and these help me stay creative and energized.
+              <p className="text-zinc-400 leading-relaxed">
+                When I'm not coding, you'll find me in the pool, 
+                experimenting in the kitchen, or enjoying a 
+                good cup of coffee.
               </p>
-            </div>
-          </Reveal>
+            </Block>
 
-          <Reveal>
-            <p className="leading-relaxed text-zinc-300">
-              I'm always open to new opportunities, collaborations, or just a good 
-              conversation about tech. If you're working on something interesting 
-              or just want to chat,{" "}
-              <span className="text-emerald-400 font-bold">let's connect!</span>
-            </p>
-          </Reveal>
-
-          <Reveal>
-            <div className="flex items-center justify-between gap-6 pt-4">
-              <div className="group flex items-center gap-4 text-sm text-emerald-300">
-                <FiCoffee className="text-emerald-400" />
-                <span>Find me here</span>
-                <FiArrowRight className="group-hover:translate-x-2 transition-all duration-300" />
+            <Block 
+              className="cursor-pointer group relative overflow-hidden p-8"
+              onClick={() => setEasterEggFound(!easterEggFound)}
+            >
+              <div className="flex items-center gap-3">
+                <FiCode className={`text-xl transition-transform duration-500 ${easterEggFound ? 'rotate-180 text-emerald-400' : 'text-zinc-500'}`} />
+                <span className="font-medium text-zinc-300">
+                  {easterEggFound ? "You found it! 🎉" : "Something hidden?"}
+                </span>
               </div>
-              <div className="flex items-center text-lg gap-4">
-                <a
-                  target="_blank"
-                  rel="noreferrer nofollow"
-                  href="https://www.linkedin.com/in/straculencu-mihai/"
-                  className="text-zinc-300 hover:text-emerald-300 transition-colors"
-                  aria-label="Visit my LinkedIn profile"
+              {easterEggFound && (
+                <motion.p 
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: "auto" }}
+                  className="mt-4 text-sm text-zinc-400 italic"
                 >
-                  <FiLinkedin />
-                </a>
-                <a
-                  target="_blank"
-                  rel="noreferrer nofollow"
-                  href="https://github.com/mihaissh"
-                  className="text-zinc-300 hover:text-emerald-300 transition-colors"
-                  aria-label="Visit my GitHub profile"
-                >
-                  <FiGithub />
-                </a>
-                <a
-                  target="_blank"
-                  rel="noreferrer nofollow"
-                  href="https://discord.com/users/s_mihai"
-                  className="text-zinc-300 hover:text-emerald-300 transition-colors"
-                  aria-label="Contact me on Discord"
-                >
-                  <SiDiscord />
-                </a>
-              </div>
-            </div>
-          </Reveal>
-        </article>
-      </section>
-    </main>
+                  "Code is like humor. When you have to explain it, it's bad."
+                </motion.p>
+              )}
+            </Block>
+          </motion.div>
+        </div>
+      </main>
+    </div>
   );
 };

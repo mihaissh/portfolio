@@ -1,202 +1,126 @@
 import { FiGithub, FiLinkedin, FiArrowRight, FiMail, FiMapPin } from "react-icons/fi";
 import { SiDiscord } from "react-icons/si";
-import { SectionHeader } from "../components/About/SectionHeader";
 import { Reveal } from "../components/About/Reveal";
 import { CertificationSection } from "../components/Resume/CertificationSection";
+import { motion } from "framer-motion";
+import { StarsCanvas } from "../components/Homepage/Stars";
+import { Block } from "../components/Homepage/Block";
 
 const SkillBadge = ({ children }) => (
-  <span className="px-3 py-1 bg-zinc-800 text-zinc-300 rounded-md text-xs border border-zinc-700">
+  <span className="px-3 py-1 bg-zinc-800/50 text-zinc-300 rounded-lg text-xs border border-zinc-700/50 backdrop-blur-sm">
     {children}
   </span>
 );
 
+const SectionTitle = ({ children }) => (
+  <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+    <span className="w-8 h-[1px] bg-emerald-500/50"></span>
+    {children}
+  </h3>
+);
+
 export const Resume = () => {
   return (
-    <main className="mx-auto max-w-5xl px-4 md:px-8 space-y-32 pb-24 relative">
-      <section className="section-wrapper mx-auto">
-        <SectionHeader title="Resume" dir="l" />
-        <div className="grid grid-cols-1 md:grid-cols-[1fr_300px] gap-8">
-          <div className="space-y-4">
-            <Reveal>
-              <h2 className="text-2xl font-bold text-white mb-2">
-                Mihai Straculencu
-              </h2>
-              <p className="text-emerald-400 text-lg mb-4">Frontend Developer</p>
-            </Reveal>
+    <div className="relative min-h-screen w-full">
+      <StarsCanvas />
+      
+      <main className="mx-auto max-w-6xl px-4 py-20 relative z-10">
+        {/* Header Section */}
+        <div className="mb-16">
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-5xl md:text-7xl font-bold tracking-tight leading-tight mb-4"
+          >
+            RESU<span className="text-zinc-600">ME</span>
+          </motion.h1>
+          <div className="flex flex-wrap gap-6 mt-8">
+            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }} className="flex items-center gap-2 text-zinc-400">
+              <FiMail className="text-emerald-400" />
+              <span>mstraculencu@gmail.com</span>
+            </motion.div>
+            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }} className="flex items-center gap-2 text-zinc-400">
+              <FiMapPin className="text-emerald-400" />
+              <span>Brasov, Romania</span>
+            </motion.div>
+          </div>
+        </div>
 
-            <Reveal>
-              <div className="space-y-2 mb-6">
-                <a 
-                  href="mailto:mstraculencu@gmail.com"
-                  className="flex items-center gap-2 text-zinc-300 hover:text-emerald-300 transition-colors w-fit"
-                >
-                  <FiMail className="text-emerald-400" />
-                  <span className="text-sm">mstraculencu@gmail.com</span>
-                </a>
-                <div className="flex items-center gap-2 text-zinc-300">
-                  <FiMapPin className="text-emerald-400" />
-                  <span className="text-sm">Brasov, Romania</span>
-                </div>
-              </div>
-            </Reveal>
-
-            <Reveal>
-              <h3 className="text-xl font-bold text-white mt-6 mb-3">Professional Summary</h3>
-              <p className="leading-relaxed text-zinc-300">
+        <div className="grid grid-cols-12 gap-6">
+          {/* Main Content */}
+          <div className="col-span-12 md:col-span-8 space-y-6">
+            <Block className="p-8 md:p-12">
+              <SectionTitle>Professional Summary</SectionTitle>
+              <p className="leading-relaxed text-zinc-300 text-lg">
                 Frontend developer from Brasov specializing in building modern, 
                 scalable web applications. Proficient in{" "}
                 <span className="font-bold text-emerald-400">
                   React, Next.js, TypeScript, Node.js, Express, PostgreSQL, and MongoDB
                 </span>
-                . Focused on creating solutions that are both functional and maintainable, 
-                with a strong emphasis on user experience and performance optimization.{" "}
-                <span className="text-emerald-400">
-                  I use AI tools to speed up development, better understand complex concepts, 
-                  and stay productive.
-                </span>
+                .
               </p>
-            </Reveal>
+            </Block>
 
-            <Reveal>
-              <h3 className="text-xl font-bold text-white mt-8 mb-3">Experience</h3>
-              <div>
-                <h4 className="font-bold text-emerald-400">Frontend Developer</h4>
-                <p className="text-sm text-zinc-400 mb-2">Freelance & Personal Projects</p>
-                <ul className="space-y-2 text-zinc-300 text-sm leading-relaxed">
-                  <li className="flex gap-2">
-                    <span className="text-emerald-500 mt-1">•</span>
-                    <span>Developed modern, responsive web applications using React, Next.js, and TypeScript</span>
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="text-emerald-500 mt-1">•</span>
-                    <span>Built RESTful APIs with Node.js, Express, and integrated with PostgreSQL and MongoDB</span>
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="text-emerald-500 mt-1">•</span>
-                    <span>Implemented authentication using Clerk and JWT</span>
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="text-emerald-500 mt-1">•</span>
-                    <span>Utilized Docker for containerization and consistent development environments</span>
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="text-emerald-500 mt-1">•</span>
-                    <span>Applied best practices in code organization and version control with Git</span>
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="text-emerald-500 mt-1">•</span>
-                    <span>Used AI tools (ChatGPT, GitHub Copilot, Cursor) to learn faster, debug efficiently, and boost productivity</span>
-                  </li>
-                </ul>
-              </div>
-            </Reveal>
-
-            <Reveal>
-              <h3 className="text-xl font-bold text-white mt-8 mb-3">Education</h3>
-              <div>
-                <h4 className="font-bold text-emerald-400">Computer Science & Software Development</h4>
-                <p className="text-sm text-zinc-400 mb-2">Self-Taught & Continuous Learning</p>
-                <p className="text-zinc-300 text-sm leading-relaxed">
-                  Continuously expanding knowledge through online courses, documentation, 
-                  and hands-on project development. Focus on modern web technologies, 
-                  software architecture, and best practices in full-stack development.
-                </p>
-              </div>
-            </Reveal>
-
-            <Reveal>
-              <div className="flex items-center justify-between gap-6 mt-8">
-                <div className="group flex items-center gap-4 text-sm text-emerald-300">
-                  <span>Socials</span>
-                  <FiArrowRight className="group-hover:translate-x-2 transition-all duration-300" />
-                </div>
-                <div className="flex items-center text-lg gap-4">
-                  <a
-                    href="https://www.linkedin.com/in/straculencu-mihai/"
-                    target="_blank"
-                    rel="noreferrer nofollow"
-                    className="text-zinc-300 hover:text-emerald-300 transition-colors"
-                    aria-label="LinkedIn"
-                  >
-                    <FiLinkedin />
-                  </a>
-                  <a
-                    href="https://github.com/mihaissh"
-                    target="_blank"
-                    rel="noreferrer nofollow"
-                    className="text-zinc-300 hover:text-emerald-300 transition-colors"
-                    aria-label="GitHub"
-                  >
-                    <FiGithub />
-                  </a>
-                  <a
-                    href="https://discord.com/users/s_mihai"
-                    target="_blank"
-                    rel="noreferrer nofollow"
-                    className="text-zinc-300 hover:text-emerald-300 transition-colors"
-                    aria-label="Discord"
-                  >
-                    <SiDiscord />
-                  </a>
+            <Block className="p-8 md:p-12">
+              <SectionTitle>Experience</SectionTitle>
+              <div className="space-y-8">
+                <div>
+                  <div className="flex justify-between items-start mb-2">
+                    <h4 className="font-bold text-xl text-white">Frontend Developer</h4>
+                    <span className="text-emerald-400 text-sm font-medium">Present</span>
+                  </div>
+                  <p className="text-zinc-400 mb-4">Freelance & Personal Projects</p>
+                  <ul className="space-y-3">
+                    {[
+                      "Developed modern, responsive web applications using React, Next.js, and TypeScript",
+                      "Built RESTful APIs with Node.js, Express, and integrated with PostgreSQL and MongoDB",
+                      "Implemented authentication using Clerk and JWT",
+                      "Utilized AI tools (ChatGPT, GitHub Copilot, Cursor) to boost productivity"
+                    ].map((item, i) => (
+                      <li key={i} className="flex gap-3 text-zinc-300 text-sm leading-relaxed">
+                        <span className="text-emerald-500 font-bold mt-1">/</span>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
-            </Reveal>
+            </Block>
           </div>
 
-          {/* Skills Section - Sidebar */}
-          <aside>
-            <div>
-              <h4 className="font-bold mb-6">Front-End</h4>
-              <div className="flex flex-wrap gap-2 mb-8">
-                <SkillBadge>React</SkillBadge>
-                <SkillBadge>Next.js</SkillBadge>
-                <SkillBadge>TypeScript</SkillBadge>
-                <SkillBadge>JavaScript</SkillBadge>
-                <SkillBadge>Tailwind CSS</SkillBadge>
-                <SkillBadge>Framer Motion</SkillBadge>
+          {/* Sidebar */}
+          <div className="col-span-12 md:col-span-4 space-y-6">
+            <Block className="p-8">
+              <SectionTitle>Skills</SectionTitle>
+              <div className="space-y-6">
+                <div>
+                  <p className="text-xs font-bold text-zinc-500 uppercase tracking-widest mb-3">Front-End</p>
+                  <div className="flex flex-wrap gap-2">
+                    {["React", "Next.js", "TypeScript", "Tailwind", "Framer Motion"].map(s => <SkillBadge key={s}>{s}</SkillBadge>)}
+                  </div>
+                </div>
+                <div>
+                  <p className="text-xs font-bold text-zinc-500 uppercase tracking-widest mb-3">Back-End</p>
+                  <div className="flex flex-wrap gap-2">
+                    {["Node.js", "Express", "PostgreSQL", "MongoDB"].map(s => <SkillBadge key={s}>{s}</SkillBadge>)}
+                  </div>
+                </div>
+                <div>
+                  <p className="text-xs font-bold text-zinc-500 uppercase tracking-widest mb-3">Tools</p>
+                  <div className="flex flex-wrap gap-2">
+                    {["Git", "Docker", "Vercel", "Cursor AI"].map(s => <SkillBadge key={s}>{s}</SkillBadge>)}
+                  </div>
+                </div>
               </div>
-            </div>
-            <div>
-              <h4 className="font-bold mb-6">Back-End</h4>
-              <div className="flex flex-wrap gap-2 mb-8">
-                <SkillBadge>Node.js</SkillBadge>
-                <SkillBadge>Express</SkillBadge>
-                <SkillBadge>PostgreSQL</SkillBadge>
-                <SkillBadge>MongoDB</SkillBadge>
-                <SkillBadge>REST API</SkillBadge>
-              </div>
-            </div>
-            <div>
-              <h4 className="font-bold mb-6">Testing</h4>
-              <div className="flex flex-wrap gap-2 mb-8">
-                <SkillBadge>Jest</SkillBadge>
-                <SkillBadge>React Testing Library</SkillBadge>
-              </div>
-            </div>
-            <div>
-              <h4 className="font-bold mb-6">AI & Productivity</h4>
-              <div className="flex flex-wrap gap-2 mb-8">
-                <SkillBadge>ChatGPT</SkillBadge>
-                <SkillBadge>GitHub Copilot</SkillBadge>
-                <SkillBadge>Cursor AI</SkillBadge>
-              </div>
-            </div>
-            <div>
-              <h4 className="font-bold mb-6">Other Tools</h4>
-              <div className="flex flex-wrap gap-2 mb-8">
-                <SkillBadge>Git</SkillBadge>
-                <SkillBadge>Docker</SkillBadge>
-                <SkillBadge>Vercel</SkillBadge>
-                <SkillBadge>Firebase</SkillBadge>
-                <SkillBadge>Postman</SkillBadge>
-              </div>
-            </div>
-          </aside>
-        </div>
+            </Block>
 
-        <CertificationSection pdfSrc="/resume/mihai-straculencu-certificare.pdf" />
-      </section>
-    </main>
+            <Block className="p-8 bg-emerald-500/5 border-emerald-500/10">
+              <SectionTitle>Certifications</SectionTitle>
+              <CertificationSection pdfSrc="/resume/mihai-straculencu-certificare.pdf" />
+            </Block>
+          </div>
+        </div>
+      </main>
+    </div>
   );
 };
-
