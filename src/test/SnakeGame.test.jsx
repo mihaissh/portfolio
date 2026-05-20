@@ -5,7 +5,16 @@ import { BrowserRouter } from 'react-router-dom';
 
 describe('SnakeGame Page', () => {
   const renderWithRouter = (component) => {
-    return render(<BrowserRouter>{component}</BrowserRouter>);
+    return render(
+      <BrowserRouter
+        future={{
+          v7_startTransition: true,
+          v7_relativeSplatPath: true,
+        }}
+      >
+        {component}
+      </BrowserRouter>
+    );
   };
 
   it('renders the game title', () => {
@@ -31,7 +40,6 @@ describe('SnakeGame Page', () => {
   it('displays the initial score as 0', () => {
     renderWithRouter(<SnakeGame />);
     const scoreElements = screen.getAllByText('0');
-    // One for current score, one for high score (if not set)
     expect(scoreElements.length).toBeGreaterThanOrEqual(1);
   });
 });

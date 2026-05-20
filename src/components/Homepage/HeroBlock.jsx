@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { FiArrowRight } from "react-icons/fi";
 import { Link } from "react-router-dom";
-import { twMerge } from "tailwind-merge";
 
 export const HeroBlock = () => {
   return (
@@ -46,7 +45,7 @@ export const HeroBlock = () => {
         transition={{ duration: 0.5, delay: 0.2 }}
         className="max-w-xl text-lg md:text-xl text-zinc-400 mb-8 leading-relaxed"
       >
-        I build things that solve problems. <span className="text-zinc-500">Frontend developer focused on creating clean, functional, and impactful digital solutions.</span>
+        Frontend dev from Brașov. React, TypeScript, the usual — I care about UI that feels good to use.
       </motion.p>
       
       <motion.div

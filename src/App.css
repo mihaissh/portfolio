@@ -3,11 +3,10 @@
 @tailwind utilities;
 
 body {
-  background-color: #09090b; /* Very dark zinc, but not pure black */
+  background-color: #09090b;
   color: #fafafa;
 }
 
-/* Custom Scrollbar Styles */
 .custom-scrollbar::-webkit-scrollbar {
   width: 8px;
 }
@@ -26,7 +25,6 @@ body {
   background: rgba(161, 161, 170, 0.7);
 }
 
-/* Easter Egg Animation */
 @keyframes fadeIn {
   from {
     opacity: 0;

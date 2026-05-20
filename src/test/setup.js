@@ -1,7 +1,6 @@
 import '@testing-library/jest-dom';
 import { vi } from 'vitest';
 
-// Mock IntersectionObserver as a class
 class MockIntersectionObserver {
   constructor() {}
   observe() {}
@@ -10,7 +9,6 @@ class MockIntersectionObserver {
 }
 window.IntersectionObserver = MockIntersectionObserver;
 
-// Mock ResizeObserver as a class
 class MockResizeObserver {
   constructor() {}
   observe() {}
@@ -19,22 +17,20 @@ class MockResizeObserver {
 }
 window.ResizeObserver = MockResizeObserver;
 
-// Mock matchMedia
 Object.defineProperty(window, 'matchMedia', {
   writable: true,
   value: vi.fn().mockImplementation(query => ({
     matches: false,
     media: query,
     onchange: null,
-    addListener: vi.fn(), // deprecated
-    removeListener: vi.fn(), // deprecated
+    addListener: vi.fn(),
+    removeListener: vi.fn(),
     addEventListener: vi.fn(),
     removeEventListener: vi.fn(),
     dispatchEvent: vi.fn(),
   })),
 });
 
-// Mock Canvas and WebGL context
 HTMLCanvasElement.prototype.getContext = vi.fn().mockReturnValue({
   fillRect: vi.fn(),
   clearRect: vi.fn(),

@@ -40,7 +40,7 @@ export const StarsCanvas = () => (
         stencil: false,
         depth: false
       }}
-      dpr={[1, 1.5]} // Limit pixel ratio for high-res screens to save GPU
+      dpr={[1, 1.5]}
     >
       <Suspense fallback={null}>
         <StarBackground />
