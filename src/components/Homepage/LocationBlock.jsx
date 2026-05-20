@@ -1,6 +1,5 @@
 import { Block } from "./Block";
 
-// Create a custom compass icon component
 const CompassLoopIcon = ({ className }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"

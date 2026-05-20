@@ -1,10 +1,18 @@
 import { useState } from "react";
 import { projects } from "../lib/projects";
 import { motion, AnimatePresence } from "framer-motion";
-import { StarsCanvas } from "../components/Homepage/Stars";
 import { ProjectModal } from "../components/Projects/ProjectModal";
 import { Block } from "../components/Homepage/Block";
 import { FiArrowUpRight, FiCalendar, FiFolder } from "react-icons/fi";
+
+const parseProjectDate = (date) => {
+  const match = date.match(/\d{4}/);
+  return match ? Number(match[0]) : 0;
+};
+
+const sortedProjects = [...projects].sort(
+  (a, b) => parseProjectDate(b.date) - parseProjectDate(a.date) || b.id - a.id
+);
 
 const ProjectCard = ({ project, onClick, index }) => {
   return (
@@ -15,11 +23,10 @@ const ProjectCard = ({ project, onClick, index }) => {
       whileHover={{ y: -5 }}
       className="h-full"
     >
-      <Block 
+      <Block
         onClick={onClick}
         className="group relative h-full flex flex-col justify-between p-8 cursor-pointer overflow-hidden border-zinc-800/50 hover:border-emerald-500/30 transition-all duration-500"
       >
-        {/* Decorative Background Icon */}
         <div className="absolute -right-4 -bottom-4 text-9xl text-white/[0.02] group-hover:text-emerald-500/[0.05] transition-colors duration-500 pointer-events-none">
           <FiFolder />
         </div>
@@ -34,7 +41,7 @@ const ProjectCard = ({ project, onClick, index }) => {
               <FiArrowUpRight className="text-lg text-zinc-500 group-hover:text-black transition-colors" />
             </div>
           </div>
-          
+
           <h2 className="text-2xl font-bold text-white mb-3 tracking-tight group-hover:text-emerald-400 transition-colors">
             {project.project}
           </h2>
@@ -51,7 +58,6 @@ const ProjectCard = ({ project, onClick, index }) => {
           ))}
         </div>
 
-        {/* Bottom Accent Line */}
         <div className="absolute bottom-0 left-0 h-1 w-0 bg-emerald-500 transition-all duration-500 group-hover:w-full" />
       </Block>
     </motion.div>
@@ -63,10 +69,7 @@ export const Projects = () => {
 
   return (
     <div className="relative min-h-screen w-full">
-      <StarsCanvas />
-      
       <main className="mx-auto max-w-6xl px-4 py-24 relative z-10">
-        {/* Header Section */}
         <div className="mb-20 text-center md:text-left">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -77,34 +80,33 @@ export const Projects = () => {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
             </span>
-            Selected Works
+            Projects
           </motion.div>
-          
-          <motion.h1 
+
+          <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
             className="text-5xl md:text-7xl font-bold tracking-tight text-white mb-6"
           >
-            CREATIVE <span className="text-zinc-600">ARCHIVE</span>
+            THINGS I'VE <span className="text-zinc-600">BUILT</span>
           </motion.h1>
-          
-          <motion.p 
+
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
             className="text-lg text-zinc-500 max-w-2xl font-light leading-relaxed"
           >
-            A collection of digital solutions where <span className="text-zinc-300">code meets design</span>. Each project is a step in my journey of building a more interactive web.
+            Client work, side projects, and stuff I built over the years.
           </motion.p>
         </div>
 
-        {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projects.map((p, index) => (
-            <ProjectCard 
-              key={p.id} 
-              project={p} 
+          {sortedProjects.map((p, index) => (
+            <ProjectCard
+              key={p.id}
+              project={p}
               index={index}
               onClick={() => setSelectedProject(p)}
             />
@@ -112,7 +114,6 @@ export const Projects = () => {
         </div>
       </main>
 
-      {/* Centralized Modal */}
       <ProjectModal
         isOpen={!!selectedProject}
         onClose={() => setSelectedProject(null)}
