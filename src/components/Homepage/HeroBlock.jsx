@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 export const HeroBlock = () => {
   return (
-    <div className="col-span-12 mb-12 flex flex-col items-start justify-center px-4 md:px-0">
+    <div className="col-span-12 mb-12 flex flex-col items-start justify-center">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -34,16 +34,17 @@ export const HeroBlock = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.1 }}
-        className="text-5xl md:text-7xl font-bold tracking-tight leading-tight mb-6"
+        className="text-[1.75rem] leading-[1.1] sm:text-5xl md:text-7xl font-bold tracking-tight mb-6 max-w-full"
       >
-        MIHAI <span className="text-zinc-600">STRACULENCU</span>
+        MIHAI{" "}
+        <span className="text-zinc-600 block sm:inline">STRACULENCU</span>
       </motion.h1>
       
       <motion.p 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
-        className="max-w-xl text-lg md:text-xl text-zinc-400 mb-8 leading-relaxed"
+        className="max-w-xl text-base sm:text-lg md:text-xl text-zinc-400 mb-8 leading-relaxed"
       >
         Frontend dev from Brașov. React, TypeScript, the usual — I care about UI that feels good to use.
       </motion.p>
