@@ -126,7 +126,7 @@ export const projects = [
     id: 6,
     project: "Quin69 VOD Archive",
     date: "2025",
-    websiteUrl: "https://quin69-vod.vercel.app/",
+    websiteUrl: "https://quin69-vods.vercel.app/",
     githubUrl: "https://github.com/mihaissh/quin69VOD",
     shortDescription: "Browse Quin69 Twitch VODs with synced chat replay.",
     longDescription:
